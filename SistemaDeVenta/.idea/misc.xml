@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Rosa Maria/AndroidStudioProjects/SistemaDeVenta/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/drawable/drawable_background_selector.xml" value="0.2169230769230769" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/drawable/drawer_background_selector.xml" value="0.1935185185185185" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/drawable/drawer_bakground_highlight.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/drawable/drawer_selector.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2169230769230769" />
@@ -12,8 +13,10 @@
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/drawable/ic_menu_manage.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/drawable/ic_menu_send.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/drawable/ic_menu_share.xml" value="0.2169230769230769" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/layout/activity_home.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/layout/fragment_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/layout/home_fragment.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/layout/nav_header.xml" value="0.16" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/menu/manu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/SistemaDeVenta/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
