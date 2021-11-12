@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/drawer_background_selector.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_article_24.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_assignment_24.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_assignment_ind_24.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_contacts_24.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_receipt_long_24.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_store_24.xml" value="0.19444444444444445" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/home_fragment.xml" value="0.20416666666666666" />
