@@ -5,38 +5,34 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_cliente"
-            android:title="@string/menu_camera" />
+            android:id="@+id/nav_inventario"
+            android:icon="@drawable/ic_inventario"
+            android:title="Inventario" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_ventas"
+            android:icon="@drawable/ic_menu_venta"
+            android:title="Venta" />
+        <item
+            android:id="@+id/nav_clientes"
+            android:icon="@drawable/ic_cliente"
+            android:title="Clientes" />
+        <item
+            android:id="@+id/nav_informes"
+            android:icon="@drawable/ic_menu_reporte"
+            android:title="Informes" />
+        <item
+            android:id="@+id/nav_proveedores"
+            android:icon="@drawable/ic_menu_proveedor"
+            android:title="Proveedores" />
     </group>
 
     <group
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:id="@+id/nav_info_negocio"
+            android:icon="@drawable/ic_menu_info_negocio"
+            android:title="Informacion del negocio" />
     </group>
-
-    <item android:title="@string/menu_group">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_share"
-                    android:title="@string/menu_share" />
-
-                <item
-                    android:id="@+id/nav_send"
-                    android:icon="@drawable/ic_menu_send"
-                    android:title="@string/menu_send" />
-            </group>
-        </menu>
-    </item>
 
 </menu>
