@@ -68,20 +68,23 @@ public class HomeActivity extends AppCompatActivity
   public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
     int title;
     switch (menuItem.getItemId()) {
-      case R.id.nav_camera:
-        title = R.string.menu_camera;
+      case R.id.nav_inventario:
+        title = R.string.menu_inventario;
         break;
-      case R.id.nav_gallery:
-        title = R.string.menu_gallery;
+      case R.id.nav_ventas:
+        title = R.string.menu_ventas;
         break;
-      case R.id.nav_manage:
-        title = R.string.menu_tools;
+      case R.id.nav_clientes:
+        title = R.string.menu_clientes;
         break;
-      case R.id.nav_share:
-        title = R.string.menu_share;
+      case R.id.nav_informes:
+        title = R.string.menu_informes;
         break;
-      case R.id.nav_send:
-        title = R.string.menu_send;
+      case R.id.nav_proveedores:
+        title = R.string.menu_proveedores;
+        break;
+      case R.id.nav_info_negocio:
+        title = R.string.menu_info_negocio;
         break;
       default:
         throw new IllegalArgumentException("menu option not implemented!!");
