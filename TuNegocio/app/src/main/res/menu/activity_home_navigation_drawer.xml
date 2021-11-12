@@ -24,6 +24,10 @@
             android:id="@+id/nav_proveedores"
             android:icon="@drawable/ic_menu_proveedor"
             android:title="Proveedores" />
+        <item
+            android:id="@+id/nav_empleados"
+            android:icon="@drawable/ic_menu_empleado"
+            android:title="Empleados" />
     </group>
 
     <group

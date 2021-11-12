@@ -83,6 +83,9 @@ public class HomeActivity extends AppCompatActivity
       case R.id.nav_proveedores:
         title = R.string.menu_proveedores;
         break;
+      case R.id.nav_empleados:
+        title = R.string.menu_empleados;
+        break;
       case R.id.nav_info_negocio:
         title = R.string.menu_info_negocio;
         break;

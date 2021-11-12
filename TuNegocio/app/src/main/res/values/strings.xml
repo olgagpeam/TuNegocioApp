@@ -11,6 +11,7 @@
     <string name="menu_clientes">Clientes</string>
     <string name="menu_informes">Informes</string>
     <string name="menu_proveedores">Proveedores</string>
+    <string name="menu_empleados">Empleados</string>
     <string name="menu_info_negocio">Informacion Negocio</string>
     <string name="copyright">TuNegocio</string>
 </resources>
