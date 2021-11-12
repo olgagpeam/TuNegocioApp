@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class HomeActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         DrawerLayout.DrawerListener {
 
@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_home);
+    setContentView(R.layout.activity_main);
 
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity
     header.findViewById(R.id.header_title).setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Toast.makeText(HomeActivity.this, getString(R.string.title_click),
+        Toast.makeText(MainActivity.this, getString(R.string.title_click),
                 Toast.LENGTH_SHORT).show();
       }
     });
@@ -93,7 +93,7 @@ public class HomeActivity extends AppCompatActivity
         throw new IllegalArgumentException("menu option not implemented!!");
     }
 
-    Fragment fragment = HomeContentFragment.newInstance(getString(title));
+    Fragment fragment = MainContentFragment.newInstance(getString(title));
     getSupportFragmentManager()
             .beginTransaction()
             .setCustomAnimations(R.anim.nav_enter, R.anim.nav_exit)

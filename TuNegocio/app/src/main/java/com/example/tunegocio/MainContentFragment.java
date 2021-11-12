@@ -10,12 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class HomeContentFragment extends Fragment {
+public class MainContentFragment extends Fragment {
 
   private static final String TEXT = "text";
 
-  public static HomeContentFragment newInstance(String text) {
-    HomeContentFragment frag = new HomeContentFragment();
+  public static MainContentFragment newInstance(String text) {
+    MainContentFragment frag = new MainContentFragment();
 
     Bundle args = new Bundle();
     args.putString(TEXT, text);
@@ -27,7 +27,7 @@ public class HomeContentFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
           Bundle savedInstanceState) {
-    View layout = inflater.inflate(R.layout.home_fragment, container, false);
+    View layout = inflater.inflate(R.layout.main_fragment, container, false);
 
     if (getArguments() != null) {
       ((TextView) layout.findViewById(R.id.text)).setText(getArguments().getString(TEXT));
