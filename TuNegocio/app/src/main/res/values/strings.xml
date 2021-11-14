@@ -13,5 +13,8 @@
     <string name="menu_proveedores">Proveedores</string>
     <string name="menu_empleados">Empleados</string>
     <string name="menu_info_negocio">Informacion Negocio</string>
+
+
+    <string name="register">Registro</string>
     <string name="copyright">TuNegocio</string>
 </resources>

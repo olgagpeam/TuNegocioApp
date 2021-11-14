@@ -36,7 +36,7 @@
         <item
             android:id="@+id/nav_info_negocio"
             android:icon="@drawable/ic_menu_info_negocio"
-            android:title="Informacion del negocio" />
+            android:title="Información del negocio" />
     </group>
 
 </menu>

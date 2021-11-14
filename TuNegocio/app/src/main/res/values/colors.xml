@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <item name="primary" type="color">#63CAA7</item>
-    <item name="primaryDark" type="color">#5c1760</item>
-    <item name="green" type="color">#63CAA7</item>
-    <item name="blue" type="color">#2196F3</item>
+    <item name="primaryDark" type="color">#26798E</item>
+    <item name="orange" type="color">#FFC172</item>
+    <item name="beige" type="color">#FFE3B3</item>
+   <!--
+    <item name="primary" type="color">#64c9a7</item>
+    <item name="primaryDark" type="color">#27798f</item>
+    <item name="orange" type="color">#ffc174</item>
+    <item name="violet" type="color">#ffe3b3</item>
+    -->
 </resources>
