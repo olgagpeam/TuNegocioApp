@@ -51,7 +51,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Nombre"
-            android:textSize="dp"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
