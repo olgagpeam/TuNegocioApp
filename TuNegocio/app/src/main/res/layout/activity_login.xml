@@ -24,7 +24,7 @@
             android:padding="21dp"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:text="Iniciar Sesión" />
+            android:text="@string/form_login" />
 
     </LinearLayout>
 
@@ -55,8 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_weight="3"
-            android:hint="Correo"
             android:backgroundTint="@color/primaryDark"
+            android:hint="@string/form_email"
             android:textColorHint="@color/primaryDark" />
 
         <!--
@@ -75,23 +75,23 @@
             android:layout_marginHorizontal="30dp"
             android:layout_weight="3"
             android:backgroundTint="@color/primaryDark"
-            android:hint="Contraseña"
+            android:hint="@string/form_password"
             android:textColorHint="@color/primaryDark" />
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btnsesion"
+        android:id="@+id/btnlogin"
         android:layout_width="324dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Iniciar Sesión" />
+        android:text="@string/form_login" />
 
     <Button
         android:id="@+id/btncrearcuent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Crear Cuenta" />
+        android:text="@string/form_bill" />
 
 </LinearLayout>

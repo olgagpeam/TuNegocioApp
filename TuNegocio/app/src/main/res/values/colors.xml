@@ -5,6 +5,8 @@
     <item name="primaryDark" type="color">#26798E</item>
     <item name="orange" type="color">#FFC172</item>
     <item name="beige" type="color">#FFE3B3</item>
+    <item name="white" type="color">#FFFFFF</item>
+
    <!--
     <item name="primary" type="color">#64c9a7</item>
     <item name="primaryDark" type="color">#27798f</item>

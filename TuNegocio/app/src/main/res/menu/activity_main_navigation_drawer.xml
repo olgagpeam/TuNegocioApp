@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_inventario"
-            android:icon="@drawable/ic_inventario"
+            android:icon="@drawable/ic_menu_inventario"
             android:title="Inventario" />
         <item
             android:id="@+id/nav_ventas"
@@ -14,7 +14,7 @@
             android:title="Venta" />
         <item
             android:id="@+id/nav_clientes"
-            android:icon="@drawable/ic_cliente"
+            android:icon="@drawable/ic_menu_cliente"
             android:title="Clientes" />
         <item
             android:id="@+id/nav_informes"

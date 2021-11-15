@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/form_supplier"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textColor="@android:color/white"
+        android:background="@color/primaryDark"/>
+
+        <ImageView
+            android:id="@+id/imageproveedor"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_menu_proveedor" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/form_name"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/etApellidos"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/tvApellidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNombre"
+            android:layout_marginTop="20dp"
+            android:text="Apellidos"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etApellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNombre"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvApellidos" />
+
+        <TextView
+            android:id="@+id/tvCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvApellidos"
+            android:layout_marginTop="20dp"
+            android:text="Correo"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etApellidos"
+            android:layout_alignStart="@+id/etApellidos"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvCorreo" />
+
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCorreo"
+            android:layout_marginTop="20dp"
+            android:text="@string/form_telephone"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCorreo"
+            android:layout_alignStart="@+id/etApellidos"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvTelefono" />
+        <TextView
+            android:id="@+id/tvPuesto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTelefono"
+            android:layout_marginTop="20dp"
+            android:text="@string/form_position"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etPuesto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTelefono"
+            android:layout_alignStart="@+id/etApellidos"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvPuesto" />
+        <TextView
+            android:id="@+id/tvSalario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPuesto"
+            android:layout_marginTop="20dp"
+            android:text="@string/form_salary"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etSalario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPuesto"
+            android:layout_alignStart="@+id/etApellidos"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvSalario" />
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSalario"
+            android:layout_marginTop="20dp"
+            android:text="@string/form_descrip"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSalario"
+            android:layout_alignStart="@+id/etApellidos"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvDescripcion" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="343dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="@string/form_add" />
+
+    </RelativeLayout>
+
+</LinearLayout>

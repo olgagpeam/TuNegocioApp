@@ -16,5 +16,24 @@
 
 
     <string name="register">Registro</string>
+    <string name="form_login">Iniciar Sesión</string>
+    <string name="form_email">Correo</string>
+    <string name="form_password"> Contraseña</string>
+    <string name="form_bill">Crear Cuenta</string>
+    <string name="form_supplier">Proveedor</string>
+    <string name="form_name">Nombre</string>
+    <string name="form_surnames">Apellidos</string>
+    <string name="form_position">Puesto</string>
+    <string name="form_telephone">Telefono</string>
+    <string name="form_salary">Salario</string>
+    <string name="form_addres">Dirección</string>
+    <string name="form_descrip">Descripción</string>
+    <string name="form_register">Registrarse</string>
+    <string name="form_add">Agregar</string>
+    <string name="form_unit">Unidad</string>
+    <string name="form_employee">Empleado</string>
+    <string name="form_category">Categoria</string>
+    <string name="form_customer">Cliente</string>
     <string name="copyright">TuNegocio</string>
+
 </resources>

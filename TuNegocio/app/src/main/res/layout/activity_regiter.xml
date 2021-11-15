@@ -19,8 +19,8 @@
         android:id="@+id/fotoItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@drawable/border"
+        android:orientation="horizontal"
         android:weightSum="4">
 
         <ImageView
@@ -29,15 +29,16 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_margin="20dp"
-            android:src="@drawable/ic_cliente" />
+            android:src="@drawable/ic_menu_cliente" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="16dp"
-            android:text="Agregar" />
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_camera"
+            android:text="@string/form_add" />
     </LinearLayout>
 
     <RelativeLayout
@@ -50,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Nombre"
+            android:text="@string/form_name"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
@@ -66,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvNombre"
             android:layout_marginTop="20dp"
-            android:text="Apellidos"
+            android:text="@string/form_surnames"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
@@ -84,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvApellidos"
             android:layout_marginTop="20dp"
-            android:text="Correo"
+            android:text="@string/form_email"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
@@ -93,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/etApellidos"
             android:layout_alignStart="@+id/etApellidos"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/tvCorreo" />
 
         <TextView
@@ -102,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCorreo"
             android:layout_marginTop="20dp"
-            android:text="Contraseña"
+            android:text="@string/form_password"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
@@ -115,13 +116,13 @@
             android:layout_toEndOf="@+id/tvContra" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonregistro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="60dp"
-            android:text="Registrarse" />
+            android:text="@string/form_register" />
 
     </RelativeLayout>
 
