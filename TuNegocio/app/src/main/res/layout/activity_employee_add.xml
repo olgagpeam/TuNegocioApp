@@ -15,30 +15,14 @@
         android:textColor="@android:color/white"
         android:background="@color/primaryDark"/>
 
-    <LinearLayout
-        android:id="@+id/fotoItems"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/border"
-        android:weightSum="4">
+    <ImageView
+        android:id="@+id/imageEmployee"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_menu_empleado" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:src="@drawable/ic_cliente" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="16dp"
-            android:text="Agregar" />
-    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -103,10 +87,46 @@
             android:inputType="date" />
 
         <TextView
-            android:id="@+id/tvCorreo"
+            android:id="@+id/tvPuesto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvFechaNac"
+            android:layout_marginTop="20dp"
+            android:text="Puesto"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etPuesto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvFechaNac"
+            android:layout_alignStart="@+id/etApellidos"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvPuesto" />
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPuesto"
+            android:layout_marginTop="20dp"
+            android:text="Telefono"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPuesto"
+            android:layout_alignStart="@+id/etApellidos"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvPhone" />
+
+        <TextView
+            android:id="@+id/tvCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPhone"
             android:layout_marginTop="20dp"
             android:text="Correo"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
@@ -115,53 +135,52 @@
             android:id="@+id/etCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvFechaNac"
+            android:layout_below="@+id/tvPhone"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/tvCorreo" />
 
         <TextView
-            android:id="@+id/tvPuestoTrab"
+            android:id="@+id/tvSalario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCorreo"
             android:layout_marginTop="20dp"
-            android:text="Puesto"
+            android:text="@string/form_salary"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etPhone"
+            android:id="@+id/etSalario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCorreo"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvPuestoTrab" />
+            android:layout_toEndOf="@+id/tvSalario" />
+
         <TextView
-            android:id="@+id/tvPhone"
+            android:id="@+id/tvDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvCorreo"
+            android:layout_below="@+id/tvSalario"
             android:layout_marginTop="20dp"
-            android:text="Puesto"
+            android:text="@string/form_descrip"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etPuestoTrab"
+            android:id="@+id/etDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvCorreo"
+            android:layout_below="@+id/tvSalario"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvPuestoTrab" />
-
+            android:layout_toEndOf="@+id/tvDescripcion" />
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="60dp"
             android:text="Registrarse" />
 
     </RelativeLayout>
