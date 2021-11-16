@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvNombre"
             android:layout_marginTop="20dp"
-            android:text="Apellidos"
+            android:text="@string/form_surnames"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
@@ -62,79 +62,81 @@
             android:layout_toEndOf="@+id/tvApellidos" />
 
         <TextView
-            android:id="@+id/tvCorreo"
+            android:id="@+id/tvTelefono1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvApellidos"
             android:layout_marginTop="20dp"
-            android:text="Correo"
+            android:text="@string/form_telephone1"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etCorreo"
+            android:id="@+id/etTelefono1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etApellidos"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvCorreo" />
+            android:layout_toEndOf="@+id/tvTelefono1" />
 
         <TextView
             android:id="@+id/tvTelefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvCorreo"
+            android:layout_below="@+id/tvTelefono1"
             android:layout_marginTop="20dp"
-            android:text="@string/form_telephone"
+            android:text="@string/form_telephone2"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
             android:id="@+id/etTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvCorreo"
+            android:layout_below="@+id/tvTelefono1"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/tvTelefono" />
+
         <TextView
-            android:id="@+id/tvPuesto"
+            android:id="@+id/tvEmpresa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTelefono"
             android:layout_marginTop="20dp"
-            android:text="@string/form_position"
+            android:text="@string/form_company"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etPuesto"
+            android:id="@+id/etEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTelefono"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvPuesto" />
+            android:layout_toEndOf="@+id/tvEmpresa" />
+
         <TextView
-            android:id="@+id/tvSalario"
+            android:id="@+id/tvCorreo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvPuesto"
+            android:layout_below="@+id/tvEmpresa"
             android:layout_marginTop="20dp"
-            android:text="@string/form_salary"
+            android:text="@string/form_email"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etSalario"
+            android:id="@+id/etCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvPuesto"
+            android:layout_below="@+id/tvEmpresa"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvSalario" />
+            android:layout_toEndOf="@+id/tvCorreo" />
         <TextView
             android:id="@+id/tvDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvSalario"
+            android:layout_below="@+id/tvCorreo"
             android:layout_marginTop="20dp"
             android:text="@string/form_descrip"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
@@ -143,7 +145,7 @@
             android:id="@+id/etDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvSalario"
+            android:layout_below="@+id/tvCorreo"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/tvDescripcion" />

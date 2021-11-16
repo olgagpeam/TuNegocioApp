@@ -25,6 +25,9 @@
     <string name="form_surnames">Apellidos</string>
     <string name="form_position">Puesto</string>
     <string name="form_telephone">Telefono</string>
+    <string name="form_telephone1">Telefono 1</string>
+    <string name="form_telephone2">Telefono 2</string>
+    <string name="form_company">Empresa</string>
     <string name="form_salary">Salario</string>
     <string name="form_addres">Dirección</string>
     <string name="form_descrip">Descripción</string>
