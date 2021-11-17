@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/imageproveedor"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:src="@drawable/ic_menu_proveedor" />
@@ -80,7 +80,7 @@
             android:layout_toEndOf="@+id/tvTelefono1" />
 
         <TextView
-            android:id="@+id/tvTelefono"
+            android:id="@+id/tvTelefono2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTelefono1"
@@ -89,19 +89,19 @@
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etTelefono"
+            android:id="@+id/etTelefono2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTelefono1"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvTelefono" />
+            android:layout_toEndOf="@+id/tvTelefono2" />
 
         <TextView
             android:id="@+id/tvEmpresa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTelefono"
+            android:layout_below="@+id/tvTelefono2"
             android:layout_marginTop="20dp"
             android:text="@string/form_company"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
@@ -110,7 +110,7 @@
             android:id="@+id/etEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTelefono"
+            android:layout_below="@+id/tvTelefono2"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/tvEmpresa" />
