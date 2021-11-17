@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/etBuscar"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:hint="Buscar"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="25dp" />
+
+        <ImageButton
+            android:id="@+id/ibBuscar"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/etBuscar"
+            android:layout_toEndOf="@+id/etBuscar"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_search" />
+
+        <ImageButton
+            android:id="@+id/ibFiltro"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/etBuscar"
+            android:layout_toEndOf="@+id/ibBuscar"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_filter" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/etBuscar">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="add"
+            android:src="@drawable/ic_add"
+            app:tint="@null"
+            android:backgroundTint="@color/primary"/>
+    </RelativeLayout>
+
+</LinearLayout>
+
+
