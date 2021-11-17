@@ -30,6 +30,7 @@
     <string name="form_company">Empresa</string>
     <string name="form_salary">Salario</string>
     <string name="form_alias">Alias</string>
+    <string name="form_product">Producto</string>
     <string name="form_addres">Dirección</string>
     <string name="form_descrip">Descripción</string>
     <string name="form_register">Registrarse</string>

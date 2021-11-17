@@ -16,7 +16,7 @@
         android:background="@color/primaryDark"/>
 
     <ImageView
-        android:id="@+id/imagecategoria"
+        android:id="@+id/imageunidad"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
