@@ -6,6 +6,8 @@
     <item name="orange" type="color">#FFC172</item>
     <item name="beige" type="color">#FFE3B3</item>
     <item name="white" type="color">#FFFFFF</item>
+    <item name="red" type="color">#F44336</item>
+    <item name="gray" type="color">#686262</item>
 
    <!--
     <item name="primary" type="color">#64c9a7</item>
