@@ -5,15 +5,30 @@
     android:fitsSystemWindows="true"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/form_supplier"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:textColor="@android:color/white"
-        android:background="@color/primaryDark"/>
+        android:background="@color/primaryDark">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@color/primaryDark"
+            android:src="@drawable/ic_regresar"
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryDark"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/form_supplier"
+            android:textColor="@android:color/white"
+            android:textSize="25dp" />
+
+    </LinearLayout>
 
         <ImageView
             android:id="@+id/imageproveedor"
