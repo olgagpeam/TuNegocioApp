@@ -129,7 +129,7 @@
             android:layout_toEndOf="@+id/tvCantidad" />
 
         <TextView
-            android:id="@+id/tvTelefono2"
+            android:id="@+id/tvUnidad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCantidad"
@@ -138,72 +138,69 @@
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etTelefono2"
+            android:id="@+id/etUnidad"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCantidad"
             android:layout_alignStart="@+id/etNombre"
             android:layout_marginTop="9dp"
-            android:layout_toEndOf="@+id/tvTelefono2" />
-
-
+            android:layout_toEndOf="@+id/tvUnidad" />
 
         <TextView
-            android:id="@+id/tvEmpresa"
+            android:id="@+id/tvCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTelefono2"
+            android:layout_below="@+id/tvUnidad"
             android:layout_marginTop="20dp"
-            android:text="@string/form_company"
+            android:text="Categoria"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etEmpresa"
+            android:id="@+id/etCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTelefono2"
+            android:layout_below="@+id/tvUnidad"
             android:layout_alignStart="@+id/etNombre"
-            android:layout_marginStart="-4dp"
             android:layout_marginTop="9dp"
-            android:layout_toEndOf="@+id/tvEmpresa" />
+            android:layout_toEndOf="@+id/tvCategoria" />
 
         <TextView
-            android:id="@+id/tvCorreo"
+            android:id="@+id/tvPrecioCompra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvEmpresa"
+            android:layout_below="@+id/tvCategoria"
             android:layout_marginTop="20dp"
-            android:text="@string/form_email"
+            android:text="Precio de Compra"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+
+        <EditText
+            android:id="@+id/etPrecioCompra"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPrecioCompra"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvPrecioVenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etCategoria"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/tvPrecioCompra"
+            android:text="Precio de Venta"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etCorreo"
-            android:layout_width="match_parent"
+            android:id="@+id/etPrecioVenta"
+            android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvEmpresa"
-            android:layout_alignStart="@+id/etNombre"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvCorreo" />
-
-
-        <TextView
-            android:id="@+id/tvDescripcion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvCorreo"
-            android:layout_marginTop="20dp"
-            android:text="@string/form_descrip"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
-        <EditText
-            android:id="@+id/etDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvCorreo"
-            android:layout_alignStart="@+id/etNombre"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="15dp"
-            android:layout_toEndOf="@+id/tvDescripcion" />
+            android:layout_below="@+id/tvPrecioVenta"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/etPrecioCompra" />
 
         <Button
             android:id="@+id/button2"
