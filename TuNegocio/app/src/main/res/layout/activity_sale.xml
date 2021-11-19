@@ -80,6 +80,42 @@
             android:text="01/01/2020"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
+        <TextView
+            android:id="@+id/tvClienteV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvFechaHoy"
+            android:layout_marginTop="20dp"
+            android:text="@string/form_customer"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <Spinner
+            android:id="@+id/SpinnerClienteV"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/tvFechaHoy"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/tvClienteV" />
+
+        <TextView
+            android:id="@+id/tvEmpleadoV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvFechaHoy"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/SpinnerClienteV"
+            android:text="@string/form_employee"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <Spinner
+            android:id="@+id/SpinnerEmpleadoV"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/tvFechaHoy"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/tvEmpleadoV" />
+
         <Button
             android:id="@+id/button2"
             android:layout_width="343dp"
@@ -88,15 +124,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="3dp"
             android:text="@string/form_add" />
-        <Spinner
-            android:id="@+id/SpinnerClienteV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Spinner
-            android:id="@+id/SpinnerEmpleadoV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
     </RelativeLayout>
 
 </LinearLayout>
