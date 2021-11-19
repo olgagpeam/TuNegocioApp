@@ -46,7 +46,7 @@
                 android:layout_marginStart="@+id/imageproducto"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/ic_camara"
-                 />
+                />
 
             <ImageButton
                 android:id="@+id/botongaleria"
@@ -78,9 +78,25 @@
         android:padding="10dp">
 
         <TextView
+            android:id="@+id/tvClave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Clave"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/etNombre"
+            android:layout_marginTop="10dp" />
+
+        <TextView
             android:id="@+id/tvNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tvClave"
             android:layout_marginTop="20dp"
             android:text="@string/form_name"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
@@ -89,62 +105,48 @@
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/etApellidos"
-            android:layout_marginTop="10dp" />
-
-        <TextView
-            android:id="@+id/tvApellidos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvNombre"
-            android:layout_marginTop="20dp"
-            android:text="@string/form_surnames"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
-        <EditText
-            android:id="@+id/etApellidos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvNombre"
+            android:layout_below="@+id/tvClave"
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvApellidos" />
+            android:layout_toEndOf="@+id/tvNombre" />
 
         <TextView
-            android:id="@+id/tvTelefono1"
+            android:id="@+id/tvCantidad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvApellidos"
+            android:layout_below="@+id/tvNombre"
             android:layout_marginTop="20dp"
-            android:text="@string/form_telephone1"
+            android:text="Cantidad"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
-            android:id="@+id/etTelefono1"
+            android:id="@+id/etCantidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/etApellidos"
-            android:layout_alignStart="@+id/etApellidos"
+            android:layout_below="@+id/etNombre"
+            android:layout_alignStart="@+id/etNombre"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvTelefono1" />
+            android:layout_toEndOf="@+id/tvCantidad" />
 
         <TextView
             android:id="@+id/tvTelefono2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTelefono1"
+            android:layout_below="@+id/tvCantidad"
             android:layout_marginTop="20dp"
-            android:text="@string/form_telephone2"
+            android:text="Unidad"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
             android:id="@+id/etTelefono2"
-            android:layout_width="match_parent"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTelefono1"
-            android:layout_alignStart="@+id/etApellidos"
-            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tvCantidad"
+            android:layout_alignStart="@+id/etNombre"
+            android:layout_marginTop="9dp"
             android:layout_toEndOf="@+id/tvTelefono2" />
+
+
 
         <TextView
             android:id="@+id/tvEmpresa"
@@ -160,8 +162,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTelefono2"
-            android:layout_alignStart="@+id/etApellidos"
-            android:layout_marginTop="10dp"
+            android:layout_alignStart="@+id/etNombre"
+            android:layout_marginStart="-4dp"
+            android:layout_marginTop="9dp"
             android:layout_toEndOf="@+id/tvEmpresa" />
 
         <TextView
@@ -178,9 +181,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvEmpresa"
-            android:layout_alignStart="@+id/etApellidos"
+            android:layout_alignStart="@+id/etNombre"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/tvCorreo" />
+
 
         <TextView
             android:id="@+id/tvDescripcion"
@@ -196,8 +200,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCorreo"
-            android:layout_alignStart="@+id/etApellidos"
-            android:layout_marginTop="10dp"
+            android:layout_alignStart="@+id/etNombre"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="15dp"
             android:layout_toEndOf="@+id/tvDescripcion" />
 
         <Button
