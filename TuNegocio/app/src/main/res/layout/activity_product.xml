@@ -22,20 +22,34 @@
 
         <ImageButton
             android:id="@+id/ibBuscar"
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignBottom="@id/etBuscar"
+            android:layout_marginHorizontal="5dp"
             android:layout_toEndOf="@+id/etBuscar"
-            android:backgroundTint="@color/white"
+            android:background="@null"
             android:src="@drawable/ic_search" />
 
         <ImageButton
-            android:id="@+id/ibFiltro"
-            android:layout_width="50dp"
+            android:id="@+id/ibScanner"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignBottom="@id/etBuscar"
+            android:layout_marginHorizontal="5dp"
             android:layout_toEndOf="@+id/ibBuscar"
-            android:backgroundTint="@color/white"
+            android:background="@color/white"
+            android:src="@drawable/ic_barcode"
+            android:tint="@color/primary" />
+
+        <ImageButton
+            android:id="@+id/ibFiltro"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/etBuscar"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="5dp"
+            android:layout_toEndOf="@+id/ibScanner"
+            android:background="@color/white"
             android:src="@drawable/ic_filter" />
 
         <androidx.recyclerview.widget.RecyclerView

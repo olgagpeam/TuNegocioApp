@@ -4,7 +4,7 @@
     android:layout_height="1dp">
 
     <item
-        android:bottom="2dp"
+        android:bottom="0dp"
         android:left="-2dp"
         android:right="-2dp"
         android:top="-2dp">

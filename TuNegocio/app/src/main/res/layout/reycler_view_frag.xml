@@ -2,13 +2,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
 
-    android:layout_height="70dp"
+    android:layout_height="72dp"
     android:layout_marginHorizontal="10dp"
     android:gravity="center_vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/border">
 
         <ImageView
             android:id="@+id/ivProducto"
@@ -39,8 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvNombreP"
-            android:layout_toEndOf="@id/ivProducto"
             android:layout_marginLeft="70dp"
+            android:layout_toEndOf="@id/ivProducto"
             android:text="Cantidad: "
             android:textSize="9sp" />
 
@@ -52,15 +53,17 @@
             android:layout_toEndOf="@+id/tvCantidadP"
             android:text="10000"
             android:textSize="9sp" />
+
         <TextView
             android:id="@+id/tvPrecioP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvNombreP"
-            android:layout_toEndOf="@+id/tvCantidadNum"
             android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/tvCantidadNum"
             android:text="Precio Venta: $"
             android:textSize="9sp" />
+
         <TextView
             android:id="@+id/tvPrecioPNum"
             android:layout_width="wrap_content"
@@ -74,10 +77,10 @@
             android:id="@+id/ibEditar"
             android:layout_width="35dp"
             android:layout_height="35dp"
+            android:layout_alignParentRight="true"
             android:background="@color/orange"
             android:src="@drawable/ic_editar"
-            android:tint="@color/white"
-            android:layout_alignParentRight="true"/>
+            android:tint="@color/white" />
 
         <ImageButton
             android:id="@+id/ibEliminar"
