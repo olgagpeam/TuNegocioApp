@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryDark">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@color/primaryDark"
+            android:src="@drawable/ic_regresar"
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryDark"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Venta"
+            android:textColor="@android:color/white"
+            android:textSize="25dp" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/imagecliente"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_menu_venta"/>
+<!-- ID
+    Fecha
+    Cliente
+    Empleado
+    Status Venta
+    -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="501dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvIdV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Venta: "
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <TextView
+            android:id="@+id/tvIdVNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/tvIdV"
+            android:text="00000"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <TextView
+            android:id="@+id/tvFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvIdV"
+            android:layout_marginTop="20dp"
+            android:text="Fecha:  "
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <TextView
+            android:id="@+id/tvFechaHoy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvIdV"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/tvFecha"
+            android:text="01/01/2020"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="343dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="3dp"
+            android:text="@string/form_add" />
+        <Spinner
+            android:id="@+id/SpinnerClienteV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/SpinnerEmpleadoV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
