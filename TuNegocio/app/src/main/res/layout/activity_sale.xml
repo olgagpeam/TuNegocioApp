@@ -24,7 +24,8 @@
             android:padding="10dp"
             android:text="Venta"
             android:textColor="@android:color/white"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:layout_marginEnd="35dp"/>
     </LinearLayout>
     <ImageView
         android:id="@+id/imagecliente"
