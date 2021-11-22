@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"> 
 
         <ImageView
             android:id="@+id/imageproducto"
@@ -89,7 +89,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="478dp"
+        android:layout_height="509dp"
         android:padding="10dp">
 
         <TextView
@@ -152,13 +152,13 @@
             android:text="Unidad"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
-        <EditText
+        <Spinner
             android:id="@+id/etUnidad"
-            android:layout_width="190dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCantidad"
             android:layout_alignStart="@+id/etNombre"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/tvUnidad" />
 
         <TextView
@@ -170,7 +170,7 @@
             android:text="Categoria"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
-        <EditText
+        <Spinner
             android:id="@+id/etCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -179,15 +179,15 @@
             android:layout_marginTop="9dp"
             android:layout_toEndOf="@+id/tvCategoria" />
 
+
         <TextView
             android:id="@+id/tvPrecioCompra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvCategoria"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="-1dp"
             android:text="Precio de Compra"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
 
         <EditText
             android:id="@+id/etPrecioCompra"
@@ -217,13 +217,48 @@
             android:layout_marginTop="4dp"
             android:layout_toEndOf="@+id/etPrecioCompra" />
 
+        <TextView
+            android:id="@+id/tvProveedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etPrecioCompra"
+            android:layout_marginTop="20dp"
+            android:text="Proveedor"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+        <Spinner
+            android:id="@+id/etProveedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etPrecioCompra"
+            android:layout_alignStart="@+id/etNombre"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvProveedor"/>
+
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvProveedor"
+            android:layout_marginTop="20dp"
+            android:text="Descripción"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+        <EditText
+            android:id="@+id/etDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etProveedor"
+            android:layout_alignStart="@+id/etNombre"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/tvDescripcion" />
+
         <Button
             android:id="@+id/button2"
             android:layout_width="343dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="2dp"
             android:text="@string/form_add" />
 
     </RelativeLayout>
