@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="72dp"
+    android:layout_marginHorizontal="10dp"
+    android:gravity="center_vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvIdP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="0000000000000" />
+
+        <TextView
+            android:id="@+id/tvNombreP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvIdP"
+            android:text="Producto" />
+
+        <TextView
+            android:id="@+id/tvCantidadP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNombreP"
+            android:layout_marginLeft="70dp"
+            android:layout_toEndOf="@id/tvNombreP"
+            android:text="Cantidad: "
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/tvCantidadNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNombreP"
+            android:layout_toEndOf="@+id/tvCantidadP"
+            android:text="10000"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/tvPrecioP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNombreP"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/tvCantidadNum"
+            android:text="Precio Venta: $"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/tvPrecioPNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNombreP"
+            android:layout_toEndOf="@+id/tvPrecioP"
+            android:text="1000.00"
+            android:textSize="9sp" />
+
+        <ImageButton
+            android:id="@+id/ibEditar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimary"/>
+
+        <ImageButton
+            android:id="@+id/ibEliminar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/ibEditar"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorAccent"/>
+
+    </RelativeLayout>
+
+
+</FrameLayout>
