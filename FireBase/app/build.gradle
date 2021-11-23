@@ -32,6 +32,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:latest.release'
+    implementation 'com.google.firebase:firebase-core:latest.release'
     implementation 'com.google.firebase:firebase-database:latest.release'
     implementation 'com.google.firebase:firebase-auth:latest.release'
     implementation 'androidx.recyclerview:recyclerview:latest.release'
