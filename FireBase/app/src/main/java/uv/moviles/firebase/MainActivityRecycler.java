@@ -20,44 +20,39 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import uv.moviles.firebase.adapters.AdapterCategoria;
-import uv.moviles.firebase.models.ModeloCategoria;
+import uv.moviles.firebase.adapters.MensajeAdapter;
+import uv.moviles.firebase.models.Mensaje;
 
 public class MainActivityRecycler extends AppCompatActivity {
-    private EditText mEditText;
-    private Button mBtnAgregar;
     private DatabaseReference mDataBase;
-
-
-    private AdapterCategoria mAdapter;
+    private MensajeAdapter mAdapter;
     private RecyclerView mRecyclerView;
-    private ArrayList <ModeloCategoria> mCategoriaList = new ArrayList<>();
+    private ArrayList <Mensaje> mMensajesList = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
-
-        mEditText = (EditText) findViewById(R.id.etcategoria);
-        mBtnAgregar = (Button) findViewById(R.id.button2);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler);
-
-        mDataBase = FirebaseDatabase.getInstance().getReference();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        getCategoriasFromFirebase();
+        mDataBase = FirebaseDatabase.getInstance().getReference();
+        getMensajesFromFirebase();
     }
 
-    private void getCategoriasFromFirebase() {
+    private void getMensajesFromFirebase() {
         mDataBase.child("Tienda").child("Surtidor").child("Categoria").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
+                    mMensajesList.clear();
                     for (DataSnapshot ds: dataSnapshot.getChildren()){
-                        String categoria = ds.child("nombreCategoria").getValue().toString();
-                        mCategoriaList.add(new ModeloCategoria(categoria));
+                        String txt = ds.child("nombreCategoria").getValue().toString();
+                        if (txt.equals("Tinaco")){
+                            mMensajesList.add(new Mensaje(txt));
+                        }
                     }
-                    mAdapter = new AdapterCategoria(mCategoriaList, R.layout.reycler_view_frag);
+                    mAdapter = new MensajeAdapter(mMensajesList, R.layout.reycler_view_frag);
                     mRecyclerView.setAdapter(mAdapter);
                 }
             }

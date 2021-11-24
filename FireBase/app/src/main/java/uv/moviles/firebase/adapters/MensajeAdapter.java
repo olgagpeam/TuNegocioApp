@@ -1,6 +1,5 @@
 package uv.moviles.firebase.adapters;
 
-import android.service.autofill.FillEventHistory;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -12,42 +11,45 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import uv.moviles.firebase.R;
-import uv.moviles.firebase.models.ModeloCategoria;
+import uv.moviles.firebase.models.Mensaje;
 
-public class AdapterCategoria extends RecyclerView.Adapter <AdapterCategoria.ViewHolder> {
+public class MensajeAdapter extends RecyclerView.Adapter<MensajeAdapter.ViewHolder> {
     private int resource;
-    private ArrayList<ModeloCategoria> categoriaList;
-    public AdapterCategoria(ArrayList<ModeloCategoria> categoriaList, int resource) {
-        this.categoriaList = categoriaList;
-        this.resource =  resource;
+    private ArrayList<Mensaje> mensajesList;
+
+    public MensajeAdapter(ArrayList<Mensaje> mensajesList, int resource) {
+        this.mensajesList = mensajesList;
+        this.resource = resource;
     }
+
     @NonNull
     @Override //Crear la vista
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(resource, viewGroup, false);
-    return new ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     //Que va en la vista
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewholder, int index) {
-        ModeloCategoria categoria =  categoriaList.get(index);
-        viewholder.tvCategoria.setText(categoria.getTexto());
+        Mensaje mensaje = mensajesList.get(index);
+        viewholder.textViewMensaje.setText(mensaje.getTxt());
     }
 
     @Override //Numero de vistas
     public int getItemCount() {
-        return 0;
+       return mensajesList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvCategoria;
+        private TextView textViewMensaje;
         public View view;
-        public ViewHolder (View view){
+
+        public ViewHolder(View view) {
             super(view);
 
             this.view = view;
-            this.tvCategoria = (TextView) view.findViewById(R.id.tvNombreP);
+            this.textViewMensaje = (TextView) view.findViewById(R.id.textViewMensaje);
         }
     }
 }
