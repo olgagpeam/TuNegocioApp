@@ -1,5 +1,5 @@
 package com.example.tunegocio;
-
+//ccontenedor después del navegador
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,7 +18,7 @@ public class MainContentFragment extends Fragment {
     MainContentFragment frag = new MainContentFragment();
 
     Bundle args = new Bundle();
-    args.putString(TEXT, text);
+    args.putString(TEXT, text); //recibira un texto de otra clase
     frag.setArguments(args);
 
     return frag;

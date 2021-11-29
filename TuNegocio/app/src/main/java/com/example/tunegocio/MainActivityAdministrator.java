@@ -1,8 +1,12 @@
 package com.example.tunegocio;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,19 +17,24 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.example.tunegocio.FragmentAdministrator.CustomerAdministrator;
+import com.example.tunegocio.FragmentAdministrator.EmployeeAdministrador;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivityAdministrator extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         DrawerLayout.DrawerListener {
 
   private DrawerLayout drawerLayout;
+  private FirebaseAuth auth;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-
+    setContentView(R.layout.activity_main_administrator);
+    auth = FirebaseAuth.getInstance();
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
@@ -49,10 +58,15 @@ public class MainActivity extends AppCompatActivity
     header.findViewById(R.id.header_title).setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Toast.makeText(MainActivity.this, getString(R.string.title_click),
+        Toast.makeText(MainActivityAdministrator.this, getString(R.string.title_click),
                 Toast.LENGTH_SHORT).show();
       }
     });
+    if(savedInstanceState==null){ //fragment principal
+      getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+              new EmployeeAdministrador()).commit();
+      navigationView.setCheckedItem(R.id.nav_empleados);
+    }
   }
 
   @Override
@@ -67,6 +81,7 @@ public class MainActivity extends AppCompatActivity
   @Override
   public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
     int title;
+
     switch (menuItem.getItemId()) {
       case R.id.nav_inventario:
         title = R.string.menu_inventario;
@@ -75,7 +90,8 @@ public class MainActivity extends AppCompatActivity
         title = R.string.menu_ventas;
         break;
       case R.id.nav_clientes:
-        title = R.string.menu_clientes;
+        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+              new CustomerAdministrator()).commit();
         break;
       case R.id.nav_informes:
         title = R.string.menu_informes;
@@ -84,27 +100,45 @@ public class MainActivity extends AppCompatActivity
         title = R.string.menu_proveedores;
         break;
       case R.id.nav_empleados:
-        title = R.string.menu_empleados;
+        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+                new EmployeeAdministrador()).commit();
         break;
       case R.id.nav_info_negocio:
         title = R.string.menu_info_negocio;
         break;
-      default:
+      case R.id.nav_cuenta:
+        title = R.string.menu_info_negocio;
+        break;
+      case R.id.nav_cerrar:
+        CerrarSesion();
+        /*auth.signOut();
+        startActivity(new Intent(MainActivityAdministrator.this, ActivityLogin.class));
+        finish();*/
+        Toast.makeText(MainActivityAdministrator.this,"Cerraste sesión",Toast.LENGTH_SHORT).show();
+        break;
+      default: //
         throw new IllegalArgumentException("menu option not implemented!!");
     }
 
-    Fragment fragment = MainContentFragment.newInstance(getString(title));
+   /*Fragment fragment = MainContentFragment.newInstance(getString(title));
     getSupportFragmentManager()
             .beginTransaction()
             .setCustomAnimations(R.anim.nav_enter, R.anim.nav_exit)
-            .replace(R.id.home_content, fragment)
+            .replace(R.id.home_content_administrator, fragment)
             .commit();
 
-    setTitle(getString(title));
+    setTitle(getString(title));*/
+
+
 
     drawerLayout.closeDrawer(GravityCompat.START);
 
     return true;
+  }
+  private void CerrarSesion(){
+    auth.signOut();
+    startActivity(new Intent(MainActivityAdministrator.this, ActivityLogin.class));
+    finish();
   }
 
   @Override

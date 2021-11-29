@@ -7,6 +7,9 @@
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/border.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/button_border.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/drawer_background_selector.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/drawer_selecto.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_add.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_barcode.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_article_24.xml" value="0.19444444444444445" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_assignment_24.xml" value="0.19444444444444445" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_assignment_ind_24.xml" value="0.19444444444444445" />
@@ -15,8 +18,12 @@
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_receipt_long_24.xml" value="0.19444444444444445" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_baseline_store_24.xml" value="0.19444444444444445" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_camera.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_categoria.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_cliente.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_editar.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_eliminar.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_filter.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_galeria.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_inventario.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_camera.xml" value="0.2203125" />
@@ -24,9 +31,13 @@
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_empleado.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_info_negocio.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_inventario.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_proveedor.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_reporte.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_sesion.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_menu_venta.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_product.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_producto.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_regresar.xml" value="0.15" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_unidad.xml" value="0.2203125" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_authentication.xml" value="0.25" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_category__add.xml" value="0.20416666666666666" />
@@ -37,15 +48,20 @@
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_list_users.xml" value="0.1" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_main_administrator.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_product.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_product_add.xml" value="0.22" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_registro.xml" value="0.22" />
-        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_regiter.xml" value="0.2" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_regiter.xml" value="0.22" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_reset_password.xml" value="0.4833091436865022" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_sale.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_supplier_add.xml" value="0.25" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_unit__add.xml" value="0.33" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_unit_add.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_user_register.xml" value="0.33" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_blank.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_customer_administrator.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_employee_administrador.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/home_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/list_item.xml" value="0.33" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/main_fragment.xml" value="0.20416666666666666" />
@@ -55,6 +71,7 @@
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/menu/activity_home_navigation_drawer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/menu/activity_main_navigation_drawer.xml" value="0.5" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/menu/menu_ab.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/menu/menu_administrator_nav_drawer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/drawable/border.xml" value="0.2625" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/drawable/ic_producto.xml" value="0.2625" />

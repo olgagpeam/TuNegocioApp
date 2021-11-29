@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "482262028513",
+    "firebase_url": "https://proyectotym2021-fca4e-default-rtdb.firebaseio.com",
+    "project_id": "proyectotym2021-fca4e",
+    "storage_bucket": "proyectotym2021-fca4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482262028513:android:ef3863a7a6c564348b67a0",
+        "android_client_info": {
+          "package_name": "com.example.tunegocio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482262028513-6e8qdcah0qvkt7k4qt2arjv0n9e77d22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCv92yyJRj3TRyUsagsqqDDf0BukQJwOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482262028513-6e8qdcah0qvkt7k4qt2arjv0n9e77d22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482262028513:android:c10f12d116be1f808b67a0",
+        "android_client_info": {
+          "package_name": "uv.moviles.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482262028513-6e8qdcah0qvkt7k4qt2arjv0n9e77d22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCv92yyJRj3TRyUsagsqqDDf0BukQJwOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482262028513-6e8qdcah0qvkt7k4qt2arjv0n9e77d22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
