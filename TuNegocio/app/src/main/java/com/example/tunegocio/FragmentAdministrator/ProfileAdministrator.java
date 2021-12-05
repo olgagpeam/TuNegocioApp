@@ -47,8 +47,8 @@ public class ProfileAdministrator extends Fragment {
         etContra=view.findViewById(R.id.etContra);
         auth = FirebaseAuth.getInstance ();
         user=auth.getCurrentUser();
-        nDataBase = FirebaseDatabase.getInstance().getReference();
-        nDataBase.child(user.getUid()).addValueEventListener(new ValueEventListener() {
+        nDataBase = FirebaseDatabase.getInstance().getReference(); //hace referencia a la raiz
+        nDataBase.child("Usuaro").child("Adiminastrador").child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
@@ -65,10 +65,10 @@ public class ProfileAdministrator extends Fragment {
                     etContra.setText(contrasena);
                     try{
                         //si existe la imagen del administrador
-                        Picasso.get().load(imagen).placeholder(R.drawable.ic_menu_cliente).into(ivusuario);
+                        Picasso.get().load(imagen).placeholder(R.drawable.usuario).into(ivusuario);
                     }catch (Exception e){
 
-                        Picasso.get().load(R.drawable.ic_menu_cliente).into(ivusuario);
+                        Picasso.get().load(R.drawable.usuario).into(ivusuario);
 
                     }
 

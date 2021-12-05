@@ -110,32 +110,14 @@ public class MainActivityAdministrator extends AppCompatActivity
       case R.id.nav_cuenta:
        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
          new ProfileAdministrator()).commit();
-        //Intent nextAct= new Intent(this,ProfileAdministrator.class);
-        //startActivity(nextAct);
-        return true;
-
+       break;
       case R.id.nav_cerrar:
         CerrarSesion();
-        /*auth.signOut();
-        startActivity(new Intent(MainActivityAdministrator.this, ActivityLogin.class));
-        finish();*/
         Toast.makeText(MainActivityAdministrator.this,"Cerraste sesión",Toast.LENGTH_SHORT).show();
         break;
       default: //
         throw new IllegalArgumentException("menu option not implemented!!");
     }
-
-   /*Fragment fragment = MainContentFragment.newInstance(getString(title));
-    getSupportFragmentManager()
-            .beginTransaction()
-            .setCustomAnimations(R.anim.nav_enter, R.anim.nav_exit)
-            .replace(R.id.home_content_administrator, fragment)
-            .commit();
-
-    setTitle(getString(title));*/
-
-
-
     drawerLayout.closeDrawer(GravityCompat.START);
 
     return true;

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".FragmentAdministrator.ProfileAdministrator">
 
     <TextView
         android:layout_width="match_parent"
@@ -12,6 +13,7 @@
         android:text="@string/profile"
         android:padding="10dp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:gravity="center"
         android:textSize="25sp">
     </TextView>
@@ -30,9 +32,22 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_margin="20dp"
-            android:src="@drawable/ic_menu_cliente" />
+            android:src="@drawable/usuario" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/buttonAgregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_camara"
+            android:layout_marginBottom="5dp"
+            android:text="@string/form_add" />
 
     </LinearLayout>
 
@@ -94,7 +109,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/tvNombreNegocio"
-            android:inputType="textCapWords|textAutoCorrect" />
+ />
 
         <TextView
             android:id="@+id/tvCorreo"
@@ -112,8 +127,7 @@
             android:layout_below="@+id/etNombreNegocio"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvCorreo"
-            android:inputType="textEmailAddress" />
+            android:layout_toEndOf="@+id/tvCorreo" />
 
         <TextView
             android:id="@+id/tvContra"
@@ -135,7 +149,7 @@
 
         <Button
             android:id="@+id/buttonGuadar"
-            android:layout_width="179dp"
+            android:layout_width="213dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
