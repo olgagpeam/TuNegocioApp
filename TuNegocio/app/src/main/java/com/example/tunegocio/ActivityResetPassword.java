@@ -11,7 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.tunegocio.Models.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ActivityResetPassword extends AppCompatActivity {
     FirebaseAuth auth;
+    Usuario mViewModel;
     EditText etCorreo;
     DatabaseReference nDataBase;
     //Crear una clase Usuario
@@ -55,7 +58,8 @@ public class ActivityResetPassword extends AppCompatActivity {
             startActivity(new Intent(ActivityResetPassword.this,ActivityLogin.class));
 
         });
-
+        mViewModel = new ViewModelProvider(this).get(Usuario.class);
+        etCorreo.setText(mViewModel.correo);
     }
 
     private void  restablecerContra(){

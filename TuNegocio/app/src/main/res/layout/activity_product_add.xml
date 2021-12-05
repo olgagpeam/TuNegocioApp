@@ -15,7 +15,7 @@
             android:layout_marginLeft="10dp"
             android:background="@color/primaryDark"
             android:src="@drawable/ic_regresar"
-            android:tint="@color/white" />
+           />
 
         <TextView
             android:layout_width="match_parent"
@@ -56,7 +56,6 @@
                 android:id="@+id/botoncamara"
                 android:layout_width="51dp"
                 android:layout_height="36dp"
-                android:tint="@color/gray"
                 android:backgroundTint="@color/white"
                 android:layout_marginStart="@+id/imageproducto"
                 android:layout_marginTop="5dp"
@@ -67,7 +66,6 @@
                 android:id="@+id/botongaleria"
                 android:layout_width="51dp"
                 android:layout_height="36dp"
-                android:tint="@color/gray"
                 android:backgroundTint="@color/white"
                 android:layout_marginStart="@+id/imageproducto"
                 android:layout_marginTop="5dp"
@@ -78,7 +76,6 @@
                 android:layout_width="51dp"
                 android:layout_height="36dp"
                 android:backgroundTint="@color/white"
-                android:tint="@color/red"
                 android:layout_marginStart="@+id/imageproducto"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/ic_eliminar" />

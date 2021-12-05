@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class MainContentFragment extends Fragment {
+public class MainContentFragment extends Fragment { //ojo esto va servir la nombre la base
 
   private static final String TEXT = "text";
 

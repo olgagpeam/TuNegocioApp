@@ -53,14 +53,14 @@
             android:gravity="center"
             android:orientation="vertical">
 
-           <!-- <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@+id/imageusuario"
-                android:layout_marginTop="5dp"
-                android:text="@string/form_add" />
-                android:drawableLeft="@drawable/ic_camara"-->
+            <!-- <Button
+                 android:id="@+id/button"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="@+id/imageusuario"
+                 android:layout_marginTop="5dp"
+                 android:text="@string/form_add" />
+                 android:drawableLeft="@drawable/ic_camara"-->
 
         </LinearLayout>
 
@@ -104,33 +104,14 @@
             android:layout_below="@+id/tvNombre"
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvApellidos"
-            android:inputType="textCapWords|textAutoCorrect" />
-
-        <TextView
-            android:id="@+id/tvNombreNegocio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvApellidos"
-            android:layout_marginTop="20dp"
-            android:text="@string/Business_name"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
-        <EditText
-            android:id="@+id/etNombreNegocio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvApellidos"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvNombreNegocio"
-            android:inputType="textCapWords|textAutoCorrect" />
+            android:inputType="textCapWords|textAutoCorrect"
+            android:layout_toEndOf="@+id/tvApellidos" />
 
         <TextView
             android:id="@+id/tvCorreo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvNombreNegocio"
+            android:layout_below="@+id/tvApellidos"
             android:layout_marginTop="20dp"
             android:text="@string/form_email"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
@@ -139,11 +120,11 @@
             android:id="@+id/etCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/etNombreNegocio"
+            android:layout_below="@+id/etApellidos"
             android:layout_alignStart="@+id/etApellidos"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/tvCorreo"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:layout_toEndOf="@+id/tvCorreo" />
 
         <TextView
             android:id="@+id/tvContra"
@@ -169,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="60dp"
             android:text="@string/form_register" />
 
     </RelativeLayout>

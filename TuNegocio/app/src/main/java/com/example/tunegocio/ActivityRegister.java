@@ -12,38 +12,48 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.tunegocio.Models.Usuario;
+import com.example.tunegocio.databinding.ActivityMainAdministratorBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class ActivityRegister extends AppCompatActivity  {
     FirebaseAuth auth;
-    EditText etNombre,etApellidos,etCorreo,etContra;
-    TextView tvNombre,tvApellidos,tvCorreo,tvContra; //todoo private
+
+    Usuario mViewModel;
+    EditText etNombre,etApellidos,etCorreo,etContra,etNombreNegocio;
+    TextView tvNombre,tvApellidos,tvCorreo,tvContra,tvNombreNegocio; //todoo private
     DatabaseReference nDataBase;
     //Crear una clase Usuario
     String nombre;
     String apellidos;
+    String nombrenegocio;
     String correo;
     String contra;
+
+//falta nombre negocio metodo comprobar si no existe ese nombre de eso negocio
+    //igual al modificar
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regiter);
-        tvNombre=findViewById(R.id.tvNombre);
+        tvNombre=findViewById(R.id.tvNombre);//fin
         tvApellidos=findViewById(R.id.tvApellidos);
+        tvNombreNegocio=findViewById(R.id.tvNombreNegocio);
         tvCorreo=findViewById(R.id.tvCorreo);
         tvContra=findViewById(R.id.tvContra);
         etNombre=findViewById(R.id.etNombre);
         etApellidos=findViewById(R.id.etApellidos);
+        etNombreNegocio=findViewById(R.id.etNombreNegocio);
         etCorreo=findViewById(R.id.etCorreo);
         etContra=findViewById(R.id.etContra);
         auth = FirebaseAuth.getInstance ();
@@ -53,6 +63,7 @@ public class ActivityRegister extends AppCompatActivity  {
         btnregistro.setOnClickListener(view -> {
             nombre=etNombre.getText().toString();
             apellidos=etApellidos.getText().toString();
+            nombrenegocio=etNombreNegocio.getText().toString();
             correo=etCorreo.getText().toString();
             contra=etContra.getText().toString();
             if(!nombre.isEmpty() && !apellidos.isEmpty() && !correo.isEmpty() && !contra.isEmpty()){
@@ -75,6 +86,12 @@ public class ActivityRegister extends AppCompatActivity  {
             startActivity(new Intent(ActivityRegister.this,ActivityLogin.class)); //cambiar de actividad
 
         });
+        mViewModel = new ViewModelProvider(this).get(Usuario.class);
+        etNombre.setText(mViewModel.nombre);
+        etApellidos.setText(mViewModel.apellidos);
+        etCorreo.setText(mViewModel.correo);
+        etContra.setText(mViewModel.contra);
+        etNombreNegocio.setText(mViewModel.nombreNegocio);
 
     }
 
@@ -86,8 +103,10 @@ public class ActivityRegister extends AppCompatActivity  {
                 Map<String, Object> usuariomap = new HashMap<>();
                 usuariomap.put("nombre",nombre);
                 usuariomap.put("apellidos",apellidos);
+                usuariomap.put("nombrenegocio",nombrenegocio);
                 usuariomap.put("correo",correo);
                 usuariomap.put("contra",contra);
+                usuariomap.put("imagen","");
                 String id=auth.getCurrentUser().getUid();
                 nDataBase.child("Usuaro").child("Adiminastrador").child(id).setValue(usuariomap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -107,5 +126,14 @@ public class ActivityRegister extends AppCompatActivity  {
             }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+       /* etNombre.setText(mViewModel.nombre);
+        etApellidos.setText(mViewModel.apellidos);
+        etCorreo.setText(mViewModel.correo);
+        etContra.setText(mViewModel.contra);*/
     }
 }

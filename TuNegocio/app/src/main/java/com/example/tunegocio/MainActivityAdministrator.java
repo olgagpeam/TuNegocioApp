@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tunegocio.FragmentAdministrator.CustomerAdministrator;
 import com.example.tunegocio.FragmentAdministrator.EmployeeAdministrador;
+import com.example.tunegocio.FragmentAdministrator.ProfileAdministrator;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -107,8 +108,12 @@ public class MainActivityAdministrator extends AppCompatActivity
         title = R.string.menu_info_negocio;
         break;
       case R.id.nav_cuenta:
-        title = R.string.menu_info_negocio;
-        break;
+       getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+         new ProfileAdministrator()).commit();
+        //Intent nextAct= new Intent(this,ProfileAdministrator.class);
+        //startActivity(nextAct);
+        return true;
+
       case R.id.nav_cerrar:
         CerrarSesion();
         /*auth.signOut();

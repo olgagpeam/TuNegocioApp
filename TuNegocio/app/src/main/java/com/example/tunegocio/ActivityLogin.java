@@ -10,7 +10,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.tunegocio.Models.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -20,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ActivityLogin extends AppCompatActivity {
     FirebaseAuth auth;
+    Usuario mViewModel;
     EditText etCorreo, etContra;
     DatabaseReference nDataBase;
     //Crear una clase Usuario
@@ -65,6 +68,10 @@ public class ActivityLogin extends AppCompatActivity {
             startActivity(new Intent(ActivityLogin.this,ActivityResetPassword.class));
 
         });
+
+        mViewModel = new ViewModelProvider(this).get(Usuario.class); //salvar el estado de la actividad
+        etCorreo.setText(mViewModel.correo);
+        etContra.setText(mViewModel.contra);
     }
     private void iniciarSesion(){
         auth.signInWithEmailAndPassword(correo,contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

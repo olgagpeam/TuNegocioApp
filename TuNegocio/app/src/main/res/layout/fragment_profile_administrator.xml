@@ -6,31 +6,16 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primaryDark">
+        android:text="@string/profile"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="25sp">
+    </TextView>
 
-        <ImageButton
-            android:id="@+id/btnRegresar"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:background="@color/primaryDark"
-            android:src="@drawable/ic_regresar" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/primaryDark"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/register"
-            android:textColor="@android:color/white"
-            android:textSize="25sp"
-            android:layout_marginEnd="35dp"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/fotoItems"
@@ -47,22 +32,7 @@
             android:layout_margin="20dp"
             android:src="@drawable/ic_menu_cliente" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
 
-           <!-- <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@+id/imageusuario"
-                android:layout_marginTop="5dp"
-                android:text="@string/form_add" />
-                android:drawableLeft="@drawable/ic_camara"-->
-
-        </LinearLayout>
 
     </LinearLayout>
 
@@ -76,8 +46,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+
             android:text="@string/form_name"
-            android:inputType="textCapWords|textAutoCorrect"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
         <EditText
@@ -105,7 +75,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/tvApellidos"
-            android:inputType="textCapWords|textAutoCorrect" />
+       />
 
         <TextView
             android:id="@+id/tvNombreNegocio"
@@ -164,13 +134,13 @@
             android:layout_toEndOf="@+id/tvContra" />
 
         <Button
-            android:id="@+id/buttonregistro"
-            android:layout_width="wrap_content"
+            android:id="@+id/buttonGuadar"
+            android:layout_width="179dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
-            android:text="@string/form_register" />
+            android:text="@string/form_save" />
 
     </RelativeLayout>
 
