@@ -1,29 +1,32 @@
 package uv.moviles.firebase;
-
-import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class DetailsFragments extends AppCompatActivity {
+    TextView detalle, detallem;
+    String detall;
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_details);
-        String txt = "Si se pudo";
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        detalle = findViewById(R.id.detalle);
+        detall = getIntent().getStringExtra("txt");
+
+        detalle.setText("txt "+ detall);
+
+
+
+
+        //String txt = "Si se pudo";
         //Bundle extras = getIntent().getExtras();
         //if (extras != null){
         //    txt = extras.getString("txt");
         //}
-        TextView textVieMensaje = (TextView) findViewById(R.id.tcDetailsText);
-        textVieMensaje.setText(txt);
+        //TextView textVieMensaje = (TextView) findViewById(R.id.tcDetailsText);
+        //textVieMensaje.setText(txt);
     }
     /*public static final String TEXT_ID = "text";
     public static final String RESOURCE_ID = "resource";
@@ -62,4 +65,9 @@ public class DetailsFragments extends AppCompatActivity {
     }
     */
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
 }

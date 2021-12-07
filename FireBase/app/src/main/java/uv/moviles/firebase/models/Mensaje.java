@@ -6,7 +6,6 @@ public class Mensaje {
      public Mensaje (String txt) {
 
          this.txt = txt;
-         //this.id = id;
      }
 
     public String getTxt() {

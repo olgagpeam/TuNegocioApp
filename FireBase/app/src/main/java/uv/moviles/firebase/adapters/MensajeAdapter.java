@@ -7,80 +7,74 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import uv.moviles.firebase.DetailsFragments;
 import uv.moviles.firebase.R;
 import uv.moviles.firebase.models.Mensaje;
 
-public class MensajeAdapter extends RecyclerView.Adapter<MensajeAdapter.ViewHolder> {
-    private int resource;
-    private ArrayList<Mensaje> mensajesList;
+public class MensajeAdapter extends RecyclerView.Adapter<MensajeAdapter.MyHolder> {
 
-    public MensajeAdapter(ArrayList<Mensaje> mensajesList, int resource) {
-        this.mensajesList = mensajesList;
-        this.resource = resource;
+    private Context context;
+    private  List<Mensaje> mensajes;
+
+    public MensajeAdapter(Context context, List<Mensaje> mensajes) {
+        this.context = context;
+        this.mensajes = mensajes;
     }
 
     @NonNull
-    @Override //Crear la vista
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(resource, viewGroup, false);
-        return new ViewHolder(view);
-    }
-
-    //Que va en la vista
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewholder, int index) {
-        Mensaje mensaje = mensajesList.get(index);
-        viewholder.textViewMensaje.setText(mensaje.getTxt());
-        viewholder.setOnClickListeners();
+    public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_recycler, parent, false);
+        return new MyHolder(view);
     }
 
-    @Override //Numero de vistas
+    @Override
+    public void onBindViewHolder(@NonNull MyHolder holder, int position) {
+        //obtenemos los datos del modelo
+        String txt = mensajes.get(position).getTxt();
+
+        //setear datos
+        holder.Mensaje.setText(txt);
+
+        //try {
+            //Picasso.get().load(IMAGEN).placeholder(R.drawable.perfil_item).into(holder.imagenRecycler);
+            //
+        //} catch (Exception e) {
+           // Picasso.get().load(R.drawable.perfil_item).into(holder.imagenRecycler);
+        //}
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(context, DetailsFragments.class);
+            intent.putExtra("txt", txt);
+            context.startActivity(intent);
+        });
+    }
+
+    @Override
     public int getItemCount() {
-        return mensajesList.size();
+        return mensajes.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private TextView textViewMensaje;
-        private ImageButton imageButtonEditar;
-        private ImageButton imageButtonEliminar;
-        public View view;
-        Context context;
+    public class MyHolder extends RecyclerView.ViewHolder {
+        //Declaramos las vistas
+        CircleImageView imagenRecycler;
+        TextView Mensaje;
 
-        public ViewHolder(View view) {
-            super(view);
 
-            this.view = view;
-            this.textViewMensaje = (TextView) view.findViewById(R.id.textViewMensaje);
-            this.imageButtonEditar = (ImageButton) view.findViewById(R.id.ibEditar);
-            this.imageButtonEliminar = (ImageButton) view.findViewById(R.id.ibEliminar);
-        }
-        void setOnClickListeners() {
-            imageButtonEditar.setOnClickListener(this);
-            imageButtonEliminar.setOnClickListener(this);
-
+        public MyHolder(@NonNull View itemView) {
+            super(itemView);
+            imagenRecycler = itemView.findViewById( R.id.imagenRecycler);
+            Mensaje = itemView.findViewById(R.id.mensaje);
         }
 
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()){
-                case R.id.ibEditar:
-                    Intent intent = new Intent(context, DetailsFragments.class);
-                    intent.putExtra("txt", textViewMensaje.getText());
-                    context.startActivity(intent);
-                    break;
-                case R.id.ibEliminar:
-                    break;
-            }
-
-        }
     }
-
 
 }

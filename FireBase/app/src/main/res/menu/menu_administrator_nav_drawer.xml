@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inventario"
+            android:icon="@drawable/ic_categoria"
+            android:title="Inventario" />
+        <item
+            android:id="@+id/nav_ventas"
+            android:icon="@drawable/ic_categoria"
+            android:title="Venta" />
+        <item
+            android:id="@+id/nav_clientes"
+            android:icon="@drawable/ic_categoria"
+            android:title="Clientes" />
+        <item
+            android:id="@+id/nav_informes"
+            android:icon="@drawable/ic_categoria"
+            android:title="Informes" />
+        <item
+            android:id="@+id/nav_proveedores"
+            android:icon="@drawable/ic_categoria"
+            android:title="Proveedores" />
+        <item
+            android:id="@+id/nav_empleados"
+            android:icon="@drawable/ic_categoria"
+            android:title="Empleados" />
+    </group>
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_info_negocio"
+            android:icon="@drawable/ic_categoria"
+            android:title="Información del negocio" />
+        <item
+            android:id="@+id/nav_cuenta"
+            android:icon="@drawable/ic_categoria"
+            android:title="Cuenta" />
+        <item
+            android:id="@+id/nav_cerrar"
+            android:icon="@drawable/ic_categoria"
+            android:title="Cerrar Sesión" />
+    </group>
+
+</menu>

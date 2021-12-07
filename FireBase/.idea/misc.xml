@@ -7,13 +7,22 @@
         <entry key="..\:/Users/Rosa Maria/AndroidStudioProjects/FireBase/app/src/main/res/layout/activity_category__add.xml" value="0.33" />
         <entry key="..\:/Users/Rosa Maria/AndroidStudioProjects/FireBase/app/src/main/res/layout/activity_category_delete.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/AndroidStudioProjects/FireBase/app/src/main/res/layout/activity_category_update.xml" value="0.1" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/drawable/drawer_background_selector.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/drawable/drawer_bakground_highligh.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/drawable/drawer_selecto.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout-large/activity_main_administrator.xml" value="0.2" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout-large/nav_header.xml" value="0.1875" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/activity_category__add.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/activity_category_delete.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/activity_category_update.xml" value="0.25" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/activity_recycler.xml" value="0.1" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/fragment_details.xml" value="0.25" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/fragment_list.xml" value="0.25" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/activity_main_administrator.xml" value="0.264" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/activity_recycler.xml" value="0.264" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/fragment_details.xml" value="0.264" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/fragment_list.xml" value="0.18888888888888888" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/nav_header.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/layout/reycler_view_frag.xml" value="0.1" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/FireBase/app/src/main/res/menu/menu_administrator_nav_drawer.xml" value="0.25" />
       </map>
     </option>
   </component>
