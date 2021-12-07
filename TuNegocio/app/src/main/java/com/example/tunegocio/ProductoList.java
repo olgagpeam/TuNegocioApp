@@ -1,5 +1,6 @@
-package uv.moviles.firebase;
+package com.example.tunegocio;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,37 +24,47 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import uv.moviles.firebase.adapters.MensajeAdapter;
-import uv.moviles.firebase.models.Mensaje;
+import com.example.tunegocio.adapters.ProductoAdapter;
+import com.example.tunegocio.Models.Producto;
 
-public class MainActivityRecycler extends Fragment {
+public class ProductoList extends Fragment {
     private FirebaseAuth mDataBase;
-    private MensajeAdapter mAdapter;
+    private ProductoAdapter mAdapter;
     private RecyclerView mRecycler;
-    private List<Mensaje> mMensajesList;
+    private List<Producto> mProductoList;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_list, container, false);
+        View view = inflater.inflate(R.layout.producto_lista, container, false);
         mRecycler = view.findViewById(R.id.recycler);
         mRecycler.setHasFixedSize(true);
         mRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-        mMensajesList = new ArrayList<>();
-
+        mProductoList = new ArrayList<>();
         mDataBase = FirebaseAuth.getInstance();
         ObtenerLista();
+
+        FloatingActionButton fab;
+
+        fab = (FloatingActionButton) view.findViewById(R.id.floating_action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ProductoAdd.class));
+            }
+        });
         return view;
     }
+
     private void ObtenerLista(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Mensaje");
-            reference.orderByChild("txt").addValueEventListener(new ValueEventListener() {
+        reference.orderByChild("txt").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mMensajesList.clear();
+                mProductoList.clear();
                 for (DataSnapshot ds: snapshot.getChildren()) {
-                    Mensaje mensaje = ds.getValue(Mensaje.class);
-                    mMensajesList.add(mensaje);
+                    Producto producto = ds.getValue(Producto.class);
+                    mProductoList.add(producto);
                     /*
                     todos  menos el que inicio sesion
 
@@ -61,7 +73,7 @@ public class MainActivityRecycler extends Fragment {
                     if (!mensaje.getTxt().equals(mensaje.getTxt())){
                         mMensajesList.add(mensaje);
                     }*/
-                    mAdapter = new MensajeAdapter(getActivity(),mMensajesList);
+                    mAdapter = new ProductoAdapter(getActivity(),mProductoList);
                     mRecycler.setAdapter(mAdapter);
                 }
             }
@@ -74,3 +86,4 @@ public class MainActivityRecycler extends Fragment {
 
     }
 }
+

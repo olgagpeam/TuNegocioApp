@@ -85,7 +85,8 @@ public class MainActivityAdministrator extends AppCompatActivity
 
     switch (menuItem.getItemId()) {
       case R.id.nav_inventario:
-        title = R.string.menu_inventario;
+        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+                new ProductoList()).commit();
         break;
       case R.id.nav_ventas:
         title = R.string.menu_ventas;

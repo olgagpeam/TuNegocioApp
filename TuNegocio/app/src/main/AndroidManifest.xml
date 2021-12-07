@@ -29,7 +29,10 @@
         <activity android:name=".MainActivityAdministrator">
 
         </activity>
-
+        <activity android:name=".DetalleProducto">
+        </activity>
+        <activity android:name=".ProductoAdd">
+        </activity>
 
     </application>
 

@@ -1,28 +1,33 @@
-package uv.moviles.firebase;
+package com.example.tunegocio;
+
 import android.os.Bundle;
 import android.widget.TextView;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class DetailsFragments extends AppCompatActivity {
-    TextView detalle, detallem;
+import com.example.tunegocio.R;
+
+public class DetalleProducto extends AppCompatActivity {
+    TextView detalle;
     String detall;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_details);
+        setContentView(R.layout.producto_fragment);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
         detalle = findViewById(R.id.detalle);
         detall = getIntent().getStringExtra("txt");
 
-        detalle.setText("txt "+ detall);
-
+        detalle.setText("txt " + detall);
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return super.onSupportNavigateUp();
+        @Override
+        public boolean onSupportNavigateUp () {
+            onBackPressed();
+            return super.onSupportNavigateUp();
+        }
     }
-}
+
