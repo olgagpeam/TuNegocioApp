@@ -51,8 +51,9 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel:latest.release'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:latest.release'
     implementation 'com.squareup.picasso:picasso:latest.release'
-    implementation "androidx.cardview:cardview:1.0.0"
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation "androidx.cardview:cardview:latest.release"
+    implementation 'de.hdodenhof:circleimageview:latest.release'
+    implementation 'com.google.firebase:firebase-storage:latest.release'
     implementation "androidx.constraintlayout:constraintlayout-compose:latest.release"
 
 

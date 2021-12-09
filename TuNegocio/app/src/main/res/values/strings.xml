@@ -43,6 +43,9 @@
     <string name="Business_name">Nombre negocio</string>
     <string name="profile">Información de cuenta</string>
     <string name="form_save">Guardar</string>
+    <string name="form_update">Actualizar</string>
+    <string name="form_email2">Correo:</string>
+    <string name="form_password2">Contraseña:</string>
     <string name="copyright">TuNegocio</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -20,7 +20,7 @@
             android:text="@string/profile"
             android:textColor="@color/black"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"></TextView>
 
 
         <LinearLayout
@@ -31,7 +31,7 @@
             android:orientation="horizontal"
             android:layout_below="@+id/top">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageusuario"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -62,8 +62,8 @@
             android:id="@+id/cuerpo"
             android:layout_width="match_parent"
             android:layout_height="353dp"
-            android:padding="10dp"
-            android:layout_below="@+id/linear">
+            android:layout_below="@+id/linear"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/tvNombre"
@@ -124,17 +124,20 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvNombreNegocio"
                 android:layout_marginTop="20dp"
-                android:text="@string/form_email"
+                android:text="@string/form_email2"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
-            <EditText
+            <TextView
                 android:id="@+id/etCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etNombreNegocio"
                 android:layout_alignStart="@+id/etApellidos"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/tvCorreo" />
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="24dp"
+                android:layout_toEndOf="@+id/tvCorreo"
+                android:textColor="@color/primaryDark"
+                android:textSize="19sp" />
 
             <TextView
                 android:id="@+id/tvContra"
@@ -142,26 +145,29 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvCorreo"
                 android:layout_marginTop="20dp"
-                android:text="@string/form_password"
+                android:text="@string/form_password2"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
-            <EditText
+            <TextView
                 android:id="@+id/etContra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvCorreo"
                 android:layout_alignStart="@+id/etApellidos"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/tvContra" />
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@+id/tvContra"
+                android:textColor="@color/primaryDark"
+                android:textSize="19sp" />
 
             <Button
-                android:id="@+id/buttonGuadar"
+                android:id="@+id/buttonactualizar"
                 android:layout_width="213dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
-                android:text="@string/form_save" />
+                android:text="@string/form_update" />
 
         </RelativeLayout>
     </RelativeLayout>
