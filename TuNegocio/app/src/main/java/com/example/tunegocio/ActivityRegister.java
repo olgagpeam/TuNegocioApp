@@ -95,6 +95,9 @@ public class ActivityRegister extends AppCompatActivity  {
 
     }
 
+    private void ExisteNegocio(){
+
+    }
     private void registro(){
         auth.createUserWithEmailAndPassword(correo,contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
