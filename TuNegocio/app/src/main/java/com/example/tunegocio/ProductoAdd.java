@@ -21,11 +21,6 @@ public class ProductoAdd extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.producto_add);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_regresar);
-        toolbar.setNavigationOnClickListener(v -> {
-            onBackPressed(); // Implemented by activity
-        });
         imageView = findViewById(R.id.imageproducto);
         clave = findViewById(R.id.etClave);
         nombre = findViewById(R.id.etNombre);
