@@ -16,9 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tunegocio.ActivityFingerprint;
 import com.example.tunegocio.ActivityInfBusiness;
-import com.example.tunegocio.MainActivityAdministrator;
 import com.example.tunegocio.R;
 
 import java.util.concurrent.Executor;
