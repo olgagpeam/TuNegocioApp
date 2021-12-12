@@ -6,13 +6,151 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".ActivityInfBusiness">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryDark"
+            android:id="@+id/linear">
 
-    <fragment
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:name="com.example.tunegocio.FragmentAdministrator.FingerprintAdministrator">
+            <ImageButton
+                android:id="@+id/btnRegresar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@color/primaryDark"
+                android:src="@drawable/ic_regresar"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primaryDark"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/menu_info_negocio"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:layout_marginEnd="35dp"/>
+
+        </LinearLayout>
 
 
+        <RelativeLayout
+            android:id="@+id/cuerpo"
+            android:layout_width="match_parent"
+            android:layout_height="353dp"
+            android:layout_below="@+id/linear"
+            android:layout_marginTop="25dp"
+            android:padding="10dp">
 
-    </fragment>
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:text="@string/form_name"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_alignStart="@+id/etApellidos"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tvApellidos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNombre"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_surnames"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNombre"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvApellidos" />
+
+            <TextView
+                android:id="@+id/tvNombreNegocio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvApellidos"
+                android:layout_marginTop="20dp"
+                android:text="@string/Business_name"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etNombreNegocio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvApellidos"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvNombreNegocio" />
+
+            <TextView
+                android:id="@+id/tvCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNombreNegocio"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_email2"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <TextView
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etNombreNegocio"
+                android:layout_alignStart="@+id/etApellidos"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="24dp"
+                android:layout_toEndOf="@+id/tvCorreo"
+                android:textColor="@color/primaryDark"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/tvContra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCorreo"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_password2"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <TextView
+                android:id="@+id/etContra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCorreo"
+                android:layout_alignStart="@+id/etApellidos"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="26dp"
+                android:layout_toEndOf="@+id/tvContra"
+                android:textColor="@color/primaryDark"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/buttonactualizar"
+                android:layout_width="213dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:text="@string/form_save" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
 </ScrollView>
