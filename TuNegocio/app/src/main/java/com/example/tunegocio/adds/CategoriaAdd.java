@@ -41,6 +41,7 @@ public class CategoriaAdd extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.categoria_add);
+        btnagregar = findViewById(R.id.btnagregarCat);
         regresar = findViewById(R.id.regresarCat);
         EditTextCategoria = findViewById(R.id.etcategoriaadd);
         btnagregar.setOnClickListener(view -> {
