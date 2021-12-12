@@ -3,6 +3,8 @@
     package="com.example.tunegocio" >
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
         android:allowBackup="true"
@@ -33,6 +35,8 @@
         <activity android:name=".DetalleProducto">
         </activity>
         <activity android:name=".ProductoAdd">
+        </activity>
+        <activity android:name=".ActivityFingerprint">
         </activity>
 
     </application>

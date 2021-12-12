@@ -144,10 +144,10 @@ public class ProfileAdministrator extends Fragment {
         });
 
 
-        mViewModel = new ViewModelProvider(ProfileAdministrator.this).get(Usuario.class);
+        /*mViewModel = new ViewModelProvider(ProfileAdministrator.this).get(Usuario.class);
         etNombre.setText(mViewModel.nombre);
         etApellidos.setText(mViewModel.apellidos);
-        etNombreNegocio.setText(mViewModel.nombreNegocio);
+        etNombreNegocio.setText(mViewModel.nombreNegocio);*/
 
         btnactualizar = view.findViewById(R.id.buttonactualizar);
         btnactualizar.setOnClickListener(new View.OnClickListener() {

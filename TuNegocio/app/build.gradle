@@ -55,6 +55,8 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:latest.release'
     implementation 'com.google.firebase:firebase-storage:latest.release'
     implementation "androidx.constraintlayout:constraintlayout-compose:latest.release"
+    //implementation(group: 'com.an.biometric', name: 'biometric-auth', version: '1.1.0', ext: 'aar', classifier: '')
+    implementation "androidx.biometric:biometric:1.1.0"
 
 
 }

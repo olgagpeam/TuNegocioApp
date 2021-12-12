@@ -20,8 +20,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,9 +42,6 @@ public class ActivityRegister extends AppCompatActivity  {
     String nombrenegocio;
     String correo;
     String contra;
-
-//falta nombre negocio metodo comprobar si no existe ese nombre de eso negocio
-    //igual al modificar
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,20 +68,38 @@ public class ActivityRegister extends AppCompatActivity  {
             correo=etCorreo.getText().toString();
             contra=etContra.getText().toString();
             if(!nombre.isEmpty() && !apellidos.isEmpty() && !correo.isEmpty() && !contra.isEmpty()){
-                if(!Patterns.EMAIL_ADDRESS.matcher(correo).matches()){
-                    etCorreo.setError("Correo Invalido");
-                    etCorreo.setFocusable(true);// ! rojo
-                }
-                if(contra.length()>6){ //
-                    registro();
-                }else {
-                    Toast.makeText(ActivityRegister.this,"La contraseña debe tener más 6 caracter",Toast.LENGTH_SHORT).show();
-                }
+                nDataBase.child("Tienda").child(nombrenegocio).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            etNombreNegocio.setError("Ese nombre de negocio ya existe. Prueba con otro");
+                            etNombreNegocio.setFocusable(true);// ! rojo
+                        }else{
+                            if(!Patterns.EMAIL_ADDRESS.matcher(correo).matches()){
+                                etCorreo.setError("Correo Invalido");
+                                etCorreo.setFocusable(true);// ! rojo
+                            }
+                            if(contra.length()>6){ //
+                                registro();
+                            }else {
+                                Toast.makeText(ActivityRegister.this,"La contraseña debe tener más 6 caracter",Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }else {
                 Toast.makeText(ActivityRegister.this,"Debe llenar los campos",Toast.LENGTH_SHORT).show();
             }
 
         });
+
         ImageButton btnregresar = findViewById(R.id.btnRegresar);
         btnregresar.setOnClickListener(view -> {
             startActivity(new Intent(ActivityRegister.this,ActivityLogin.class)); //cambiar de actividad
@@ -95,9 +114,6 @@ public class ActivityRegister extends AppCompatActivity  {
 
     }
 
-    private void ExisteNegocio(){
-
-    }
     private void registro(){
         auth.createUserWithEmailAndPassword(correo,contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

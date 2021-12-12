@@ -16,7 +16,7 @@
             android:layout_marginLeft="10dp"
             android:background="@color/primaryDark"
             android:src="@drawable/ic_regresar"
-            android:tint="@color/white" />
+           />
 
         <TextView
             android:layout_width="match_parent"
