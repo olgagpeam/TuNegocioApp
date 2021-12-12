@@ -19,6 +19,7 @@ import com.example.tunegocio.FragmentAdministrator.EmployeeAdministrador;
 import com.example.tunegocio.FragmentAdministrator.FingerprintAdministrator;
 import com.example.tunegocio.FragmentAdministrator.ProductAdministrator;
 import com.example.tunegocio.FragmentAdministrator.ProfileAdministrator;
+import com.example.tunegocio.FragmentAdministrator.UnitAdministrator;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -108,7 +109,8 @@ public class MainActivityAdministrator extends AppCompatActivity
                 new CategoryAdministrator()).commit();
         break;
       case R.id.nav_unidades:
-        title = R.string.form_unit;
+        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+                new UnitAdministrator()).commit();
         break;
 
       case R.id.nav_info_negocio:

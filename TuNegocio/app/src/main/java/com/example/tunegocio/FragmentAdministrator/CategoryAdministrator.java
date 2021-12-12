@@ -12,13 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tunegocio.Models.Categoria;
+import com.example.tunegocio.adapters.CategoriaAdapter;
 import com.example.tunegocio.adds.CategoriaAdd;
-import com.example.tunegocio.adds.ProductoAdd;
 import com.example.tunegocio.R;
-import com.example.tunegocio.detalles.DetalleCategoria;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,28 +27,26 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.tunegocio.adapters.ProductoAdapter;
-import com.example.tunegocio.Models.Producto;
 
 public class CategoryAdministrator extends Fragment {
     private FirebaseAuth mDataBase;
-    //private ProductoAdapter mAdapter;
-    //private RecyclerView mRecycler;
-    //private List<Producto> mProductoList;
+    private CategoriaAdapter mAdapter;
+    private RecyclerView mRecycler;
+    private List<Categoria> mCategoryList;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.producto_lista, container, false);
-        //mRecycler = view.findViewById(R.id.recycler);
-       //mRecycler.setHasFixedSize(true);
-        //mRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-        //mProductoList = new ArrayList<>();
+        View view = inflater.inflate(R.layout.categoria_fragment, container, false);
+        mRecycler = view.findViewById(R.id.recyclerCat);
+        mRecycler.setHasFixedSize(true);
+        mRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+        mCategoryList = new ArrayList<>();
         mDataBase = FirebaseAuth.getInstance();
-       //ObtenerLista();
+        ObtenerLista();
 
         FloatingActionButton fab;
 
-        fab = (FloatingActionButton) view.findViewById(R.id.floating_action_button);
+        fab = (FloatingActionButton) view.findViewById(R.id.floating_action_button_cat);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,26 +55,17 @@ public class CategoryAdministrator extends Fragment {
         });
         return view;
     }
-/*
-    private void ObtenerLista(){
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Mensaje");
-        reference.orderByChild("txt").addValueEventListener(new ValueEventListener() {
+
+    private void ObtenerLista() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Categoria");
+        reference.orderByChild("nombreCategoria").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                mProductoList.clear();
-                for (DataSnapshot ds: snapshot.getChildren()) {
-                    Producto producto = ds.getValue(Producto.class);
-                    mProductoList.add(producto);
-                    *//*
-                    todos  menos el que inicio sesion
-
-                    assert administrador != null;
-                    assert mensaje != null;
-                    if (!mensaje.getTxt().equals(mensaje.getTxt())){
-                        mMensajesList.add(mensaje);
-                    }*//*
-                    mAdapter = new ProductoAdapter(getActivity(),mProductoList);
+                mCategoryList.clear();
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    Categoria categoria = ds.getValue(Categoria.class);
+                    mCategoryList.add(categoria);
+                    mAdapter = new CategoriaAdapter(getActivity(), mCategoryList);
                     mRecycler.setAdapter(mAdapter);
                 }
             }
@@ -88,6 +76,6 @@ public class CategoryAdministrator extends Fragment {
             }
         });
 
-    }*/
+    }
 }
 

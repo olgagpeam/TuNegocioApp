@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import com.example.tunegocio.Models.Categoria;
+import com.example.tunegocio.detalles.DetalleCategoria;
 import com.example.tunegocio.detalles.DetalleProducto;
 import com.example.tunegocio.R;
 
@@ -42,8 +43,8 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.MyHo
         //setear datos
         holder.cat.setText(categoria);
         holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(context, DetalleProducto.class);
-            intent.putExtra("categoria", categoria);
+            Intent intent = new Intent(context, DetalleCategoria.class);
+            intent.putExtra("nombreCategoria", categoria);
             context.startActivity(intent);
         });
     }
@@ -55,11 +56,9 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.MyHo
 
     public class MyHolder extends RecyclerView.ViewHolder {
         //Declaramos las vistas
-        //CircleImageView imagenRecycler;
         EditText cat;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
-            //imagenRecycler = itemView.findViewById(R.id.imagenRecycler);
             cat = itemView.findViewById(R.id.categorianame);
         }
 

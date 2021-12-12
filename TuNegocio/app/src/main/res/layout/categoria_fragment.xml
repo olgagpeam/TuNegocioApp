@@ -8,14 +8,14 @@
     tools:context=".FragmentAdministrator.ProductAdministrator">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/recyclerCat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/categoria_item">
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
+        android:id="@+id/floating_action_button_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
