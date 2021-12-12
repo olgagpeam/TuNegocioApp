@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,14 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import com.example.tunegocio.ActivityLogin;
-import com.example.tunegocio.ActivityRegister;
-import com.example.tunegocio.DetalleProducto;
-import com.example.tunegocio.ProductoAdd;
-import com.example.tunegocio.ProductoList;
+import com.example.tunegocio.detalles.DetalleProducto;
 import com.example.tunegocio.R;
 import com.example.tunegocio.Models.Producto;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyHolder> {
 

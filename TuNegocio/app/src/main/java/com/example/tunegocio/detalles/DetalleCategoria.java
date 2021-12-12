@@ -1,4 +1,4 @@
-package com.example.tunegocio;
+package com.example.tunegocio.detalles;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,25 +9,24 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.tunegocio.R;
 
-public class DetalleProducto extends AppCompatActivity {
+public class DetalleCategoria extends AppCompatActivity {
     TextView detalle;
     String detall;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.producto_fragment);
+        setContentView(R.layout.categoria_detalle);
         Toolbar toolbar = findViewById(R.id.toolbar);
         detalle = findViewById(R.id.detalle);
-        detall = getIntent().getStringExtra("txt");
+        detall = getIntent().getStringExtra("Detalle");
 
         detalle.setText("txt " + detall);
     }
 
-        @Override
-        public boolean onSupportNavigateUp () {
-            onBackPressed();
-            return super.onSupportNavigateUp();
-        }
+    @Override
+    public boolean onSupportNavigateUp () {
+        onBackPressed();
+        return super.onSupportNavigateUp();
     }
-
+}

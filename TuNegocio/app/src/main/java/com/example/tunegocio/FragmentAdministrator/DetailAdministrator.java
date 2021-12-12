@@ -1,4 +1,4 @@
-package com.example.tunegocio;
+package com.example.tunegocio.FragmentAdministrator;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tunegocio.adds.CategoriaAdd;
+import com.example.tunegocio.adds.ProductoAdd;
+import com.example.tunegocio.R;
+import com.example.tunegocio.detalles.DetalleCategoria;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,21 +31,21 @@ import java.util.List;
 import com.example.tunegocio.adapters.ProductoAdapter;
 import com.example.tunegocio.Models.Producto;
 
-public class ProductoList extends Fragment {
+public class DetailAdministrator extends Fragment {
     private FirebaseAuth mDataBase;
-    private ProductoAdapter mAdapter;
-    private RecyclerView mRecycler;
-    private List<Producto> mProductoList;
+    //private ProductoAdapter mAdapter;
+    //private RecyclerView mRecycler;
+    //private List<Producto> mProductoList;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.producto_lista, container, false);
-        mRecycler = view.findViewById(R.id.recycler);
-        mRecycler.setHasFixedSize(true);
-        mRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-        mProductoList = new ArrayList<>();
+        //mRecycler = view.findViewById(R.id.recycler);
+       //mRecycler.setHasFixedSize(true);
+        //mRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+        //mProductoList = new ArrayList<>();
         mDataBase = FirebaseAuth.getInstance();
-        ObtenerLista();
+       //ObtenerLista();
 
         FloatingActionButton fab;
 
@@ -49,12 +53,12 @@ public class ProductoList extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), ProductoAdd.class));
+                startActivity(new Intent(getActivity(), CategoriaAdd.class));
             }
         });
         return view;
     }
-
+/*
     private void ObtenerLista(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Mensaje");
@@ -65,14 +69,14 @@ public class ProductoList extends Fragment {
                 for (DataSnapshot ds: snapshot.getChildren()) {
                     Producto producto = ds.getValue(Producto.class);
                     mProductoList.add(producto);
-                    /*
+                    *//*
                     todos  menos el que inicio sesion
 
                     assert administrador != null;
                     assert mensaje != null;
                     if (!mensaje.getTxt().equals(mensaje.getTxt())){
                         mMensajesList.add(mensaje);
-                    }*/
+                    }*//*
                     mAdapter = new ProductoAdapter(getActivity(),mProductoList);
                     mRecycler.setAdapter(mAdapter);
                 }
@@ -84,6 +88,6 @@ public class ProductoList extends Fragment {
             }
         });
 
-    }
+    }*/
 }
 

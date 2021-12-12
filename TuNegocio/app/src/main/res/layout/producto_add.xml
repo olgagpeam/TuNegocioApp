@@ -8,39 +8,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/barra"
+        <LinearLayout
+            android:id="@+id/bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primaryDark"
-            app:navigationIcon="@drawable/ic_regresar">
+            android:background="@color/primaryDark">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@color/primaryDark"
+                android:src="@drawable/ic_regresar" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:background="@color/primaryDark"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/form_product"
                 android:textColor="@android:color/white"
-                android:textSize="25sp" />
-        </androidx.appcompat.widget.Toolbar>
+                android:textSize="25sp"
+                android:layout_marginEnd="35dp"/>
 
+        </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linear"
+            android:id="@+id/top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/barra"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_below="@+id/bar"
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/imageproducto"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
@@ -50,8 +54,6 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageproducto"
-                android:layout_toEndOf="@+id/imageproducto"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -85,7 +87,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linear"
+            android:layout_below="@+id/top"
             android:padding="10dp">
 
             <TextView
@@ -183,7 +185,8 @@
                 android:layout_below="@+id/tvCategoria"
                 android:layout_marginTop="12dp"
                 android:text="Precio de Compra"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/etPrecioCompra"
@@ -198,11 +201,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvCategoria"
-                android:layout_marginStart="44dp"
+                android:layout_marginStart="100dp"
                 android:layout_marginTop="12dp"
                 android:layout_toEndOf="@+id/tvPrecioCompra"
                 android:text="Precio de Venta"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/etPrecioVenta"

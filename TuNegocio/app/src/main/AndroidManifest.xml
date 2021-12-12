@@ -32,9 +32,11 @@
         <activity android:name=".MainActivityAdministrator">
 
         </activity>
-        <activity android:name=".DetalleProducto">
+        <activity android:name=".detalles.DetalleProducto">
         </activity>
-        <activity android:name=".ProductoAdd">
+        <activity android:name=".adds.ProductoAdd">
+        </activity>
+        <activity android:name=".adds.CategoriaAdd">
         </activity>
         <activity android:name=".ActivityFingerprint">
         </activity>

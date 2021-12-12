@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
     android:orientation="vertical"
-    tools:context=".DetalleProducto">
+    tools:context=".detalles.DetalleProducto">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"

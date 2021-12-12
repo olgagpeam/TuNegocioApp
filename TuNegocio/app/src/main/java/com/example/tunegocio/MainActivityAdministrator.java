@@ -14,7 +14,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.tunegocio.FragmentAdministrator.CustomerAdministrator;
+import com.example.tunegocio.FragmentAdministrator.DetailAdministrator;
 import com.example.tunegocio.FragmentAdministrator.EmployeeAdministrador;
+import com.example.tunegocio.FragmentAdministrator.ProductAdministrator;
 import com.example.tunegocio.FragmentAdministrator.ProfileAdministrator;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -81,7 +83,7 @@ public class MainActivityAdministrator extends AppCompatActivity
     switch (menuItem.getItemId()) {
       case R.id.nav_inventario:
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
-                new ProductoList()).commit();
+                new ProductAdministrator()).commit();
         break;
       case R.id.nav_ventas:
         title = R.string.menu_ventas;
@@ -94,7 +96,8 @@ public class MainActivityAdministrator extends AppCompatActivity
         title = R.string.menu_informes;
         break;
       case R.id.nav_proveedores:
-        title = R.string.menu_proveedores;
+        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+                new DetailAdministrator()).commit();
         break;
       case R.id.nav_empleados:
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
