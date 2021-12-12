@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
-    tools:context=".detalles.DetalleCategoria">
+    tools:context=".detalles.DetalleUnidad">
 
     <LinearLayout
-        android:id="@+id/bar"
+        android:id="@+id/bardetalleUni"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primaryDark">
@@ -16,7 +16,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@color/primaryDark"
             android:src="@drawable/ic_regresar" />
 
@@ -26,7 +26,7 @@
             android:background="@color/primaryDark"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/detalle_categoria"
+            android:text="Detalle Unidad"
             android:textColor="@android:color/white"
             android:textSize="25sp"
             android:layout_marginEnd="35dp"/>
@@ -37,31 +37,31 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bar"
+        android:layout_below="@+id/bardetalleUni"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="25dp">
 
         <TextView
-            android:id="@+id/detalleCat"
+            android:id="@+id/detalleUni"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/form_category"
+            android:text="@string/form_unit"
             android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/etCatEdit"
+            android:id="@+id/etUnidadEdit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
         <Button
-            android:id="@+id/desCat"
+            android:id="@+id/desUni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/deshabilitar"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:text="Deshabilitar"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

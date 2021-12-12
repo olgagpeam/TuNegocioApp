@@ -31,7 +31,7 @@ import java.util.List;
 import com.example.tunegocio.adapters.ProductoAdapter;
 import com.example.tunegocio.Models.Producto;
 
-public class DetailAdministrator extends Fragment {
+public class CategoryAdministrator extends Fragment {
     private FirebaseAuth mDataBase;
     //private ProductoAdapter mAdapter;
     //private RecyclerView mRecycler;

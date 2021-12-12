@@ -37,7 +37,7 @@ public class ProductAdministrator extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.producto_lista, container, false);
+        View view = inflater.inflate(R.layout.producto_fragment, container, false);
         mRecycler = view.findViewById(R.id.recycler);
         mRecycler.setHasFixedSize(true);
         mRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 1));

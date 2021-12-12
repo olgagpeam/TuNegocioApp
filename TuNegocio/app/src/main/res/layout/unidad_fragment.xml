@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentAdministrator.ProductAdministrator">
+    tools:context=".FragmentAdministrator.UnitAdministrator">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/recyclerUni"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/producto_recycler">
+        tools:listitem="@layout/unidad_item">
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
+        android:id="@+id/floating_action_button_Uni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -23,7 +23,6 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/primary"
-        android:contentDescription="add"
         android:src="@drawable/ic_add"
         app:tint="@null" />
 

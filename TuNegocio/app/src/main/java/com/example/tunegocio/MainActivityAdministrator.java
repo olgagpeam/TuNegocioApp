@@ -14,7 +14,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.tunegocio.FragmentAdministrator.CustomerAdministrator;
-import com.example.tunegocio.FragmentAdministrator.DetailAdministrator;
+import com.example.tunegocio.FragmentAdministrator.CategoryAdministrator;
 import com.example.tunegocio.FragmentAdministrator.EmployeeAdministrador;
 import com.example.tunegocio.FragmentAdministrator.FingerprintAdministrator;
 import com.example.tunegocio.FragmentAdministrator.ProductAdministrator;
@@ -97,13 +97,20 @@ public class MainActivityAdministrator extends AppCompatActivity
         title = R.string.menu_informes;
         break;
       case R.id.nav_proveedores:
-        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
-                new DetailAdministrator()).commit();
+
         break;
       case R.id.nav_empleados:
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
                 new EmployeeAdministrador()).commit();
         break;
+      case R.id.nav_categoria:
+        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+                new CategoryAdministrator()).commit();
+        break;
+      case R.id.nav_unidades:
+        title = R.string.form_unit;
+        break;
+
       case R.id.nav_info_negocio:
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
                 new FingerprintAdministrator()).commit();
@@ -116,6 +123,7 @@ public class MainActivityAdministrator extends AppCompatActivity
         CerrarSesion();
         Toast.makeText(MainActivityAdministrator.this,"Cerraste sesión",Toast.LENGTH_SHORT).show();
         break;
+
       default: //
         throw new IllegalArgumentException("menu option not implemented!!");
     }

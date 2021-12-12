@@ -16,7 +16,7 @@ public class DetalleProducto extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.producto_fragment);
+        setContentView(R.layout.producto_detalle);
         Toolbar toolbar = findViewById(R.id.toolbar);
         detalle = findViewById(R.id.detalle);
         detall = getIntent().getStringExtra("txt");
