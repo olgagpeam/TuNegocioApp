@@ -48,6 +48,7 @@
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_employee_add.xml" value="0.25" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_fingerprint.xml" value="0.25" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_inf_business.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_list_users.xml" value="0.1" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
@@ -65,6 +66,9 @@
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_blank.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_customer_administrator.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_employee_administrador.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_fingerprint.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_fingerprint_administrator.xml" value="0.1" />
+        <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_inf_business_administrator.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_password.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_profile_administrator.xml" value="0.22" />
         <entry key="..\:/Users/Rosa Maria/Documents/GitHub/TuNegocioApp/TuNegocio/app/src/main/res/layout/home_fragment.xml" value="0.20416666666666666" />
@@ -94,17 +98,11 @@
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_sale.xml" value="0.2453125" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_supplier_add.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/activity_unit_add.xml" value="0.17798913043478262" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/categoria.xml" value="0.25" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/categoria_add.xml" value="0.264" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/categoria_detalle.xml" value="0.264" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/categoria_fragment.xml" value="0.11980749746707194" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/categoria_item.xml" value="0.11980749746707194" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/categoria_lista.xml" value="0.11980749746707194" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_employee_administrador.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_profile_administrator.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/main_fragment.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/nav_header.xml" value="0.17798913043478262" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_add.xml" value="0.2" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_add.xml" value="0.536" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_detalle.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_fragment.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_lista.xml" value="0.25" />

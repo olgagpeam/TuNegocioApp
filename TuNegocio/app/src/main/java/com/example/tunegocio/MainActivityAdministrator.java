@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.tunegocio.FragmentAdministrator.CustomerAdministrator;
 import com.example.tunegocio.FragmentAdministrator.DetailAdministrator;
 import com.example.tunegocio.FragmentAdministrator.EmployeeAdministrador;
+import com.example.tunegocio.FragmentAdministrator.FingerprintAdministrator;
 import com.example.tunegocio.FragmentAdministrator.ProductAdministrator;
 import com.example.tunegocio.FragmentAdministrator.ProfileAdministrator;
 import com.google.android.material.navigation.NavigationView;
@@ -104,7 +105,8 @@ public class MainActivityAdministrator extends AppCompatActivity
                 new EmployeeAdministrador()).commit();
         break;
       case R.id.nav_info_negocio:
-        title = R.string.menu_info_negocio;
+        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+                new FingerprintAdministrator()).commit();
         break;
       case R.id.nav_cuenta:
        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
