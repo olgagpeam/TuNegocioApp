@@ -38,7 +38,7 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.MyHo
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         //obtenemos los datos del modelo
-        String categoria = categorias.get(position).getNombreCetegoria();
+        String categoria = categorias.get(position).getNombreCategoria();
 
         //setear datos
         holder.cat.setText(categoria);
@@ -56,7 +56,7 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.MyHo
 
     public class MyHolder extends RecyclerView.ViewHolder {
         //Declaramos las vistas
-        EditText cat;
+        TextView cat;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             cat = itemView.findViewById(R.id.categorianame);

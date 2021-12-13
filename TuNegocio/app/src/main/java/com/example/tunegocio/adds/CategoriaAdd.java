@@ -35,17 +35,22 @@ public class CategoriaAdd extends AppCompatActivity {
     DatabaseReference nDataBase;
     EditText EditTextCategoria;
     Button btnagregar;
-    ImageButton regresar;
+    ImageButton btnregresar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.categoria_add);
         btnagregar = findViewById(R.id.btnagregarCat);
-        regresar = findViewById(R.id.regresarCat);
+        btnregresar = findViewById(R.id.regresarCat);
         EditTextCategoria = findViewById(R.id.etcategoriaadd);
+        auth = FirebaseAuth.getInstance ();
+        user = auth.getCurrentUser();
         btnagregar.setOnClickListener(view -> {
             ObtenerNegocio();
+        });
+        btnregresar.setOnClickListener(view -> {
+            onBackPressed();
         });
     }
 
@@ -60,7 +65,7 @@ public class CategoriaAdd extends AppCompatActivity {
                     String categoria = EditTextCategoria.getText().toString(); //edit-> cambiar
                     if(!categoria.isEmpty()) {
                         Map<String, Object> categoriaMap = new HashMap<>();
-                        categoriaMap.put("nombreCategoria", categoria);//nombre valor
+                        categoriaMap.put("nombreCategoria", categoria); //nombre valor
                         nDataBase.child("Tienda").child(nom).child("Categoria").push().setValue(categoriaMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -84,6 +89,10 @@ public class CategoriaAdd extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
 
 }

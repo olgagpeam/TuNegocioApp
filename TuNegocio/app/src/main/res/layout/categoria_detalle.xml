@@ -14,6 +14,7 @@
         android:background="@color/primaryDark">
 
         <ImageButton
+            android:id="@+id/regresarCatDet"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
@@ -54,14 +55,30 @@
         <EditText
             android:id="@+id/etCatEdit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
-        <Button
-            android:id="@+id/desCat"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/deshabilitar"
-            android:textColor="@color/white" />
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/editCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/editar"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/deleteCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="30dp"
+                android:text="Eliminar"
+                android:backgroundTint="@color/red"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

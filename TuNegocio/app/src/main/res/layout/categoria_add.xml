@@ -60,8 +60,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:hint="categoria"
-            android:layout_toEndOf="@+id/tvnomcategoria" />
+            android:layout_toEndOf="@+id/tvnomcategoria"
+            android:hint="categoria" />
 
         <Button
             android:id="@+id/btnagregarCat"

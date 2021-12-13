@@ -98,7 +98,6 @@ public class MainActivityAdministrator extends AppCompatActivity
         title = R.string.menu_informes;
         break;
       case R.id.nav_proveedores:
-
         break;
       case R.id.nav_empleados:
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,

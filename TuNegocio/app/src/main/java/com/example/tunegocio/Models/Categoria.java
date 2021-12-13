@@ -1,21 +1,21 @@
 package com.example.tunegocio.Models;
 
 public class Categoria {
-    private String nombreCetegoria;
+    private String nombreCategoria;
 
     public Categoria() {
     }
 
-    public Categoria(String nombreCetegoria) {
-        this.nombreCetegoria = nombreCetegoria;
+    public Categoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
     }
 
-    public String getNombreCetegoria() {
-        return nombreCetegoria;
+    public String getNombreCategoria() {
+        return nombreCategoria;
     }
 
-    public void setNombreCetegoria(String nombreCetegoria) {
-        this.nombreCetegoria = nombreCetegoria;
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
     }
 }
 
