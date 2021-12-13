@@ -27,9 +27,9 @@
             android:id="@+id/fotoItems"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/top"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_below="@+id/top">
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageusuario"

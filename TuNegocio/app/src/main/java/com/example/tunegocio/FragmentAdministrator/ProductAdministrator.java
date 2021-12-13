@@ -119,17 +119,16 @@ public class ProductAdministrator extends Fragment {
                     String nom = snapshot.child("nombrenegocio").getValue().toString();
                     mDataBase = FirebaseDatabase.getInstance().getReference(); //nodo raiz
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tienda");
-                    reference.child(nom).child("Categoria").orderByChild("nombreCategoria").addValueEventListener(new ValueEventListener() {
+                    reference.child(nom).child("Producto").orderByChild("nombreProducto").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            mCategoryList.clear();
+                            mProductoList.clear();
                             for (DataSnapshot ds : snapshot.getChildren()) {
-                                Categoria categoria = ds.getValue(Categoria.class);
-
-                                if (categoria.getNombreCategoria().toLowerCase().contains(consulta.toLowerCase())) {
-                                    mCategoryList.add(categoria);
+                                Producto producto = ds.getValue(Producto.class);
+                                if (producto.getNombreProducto().toLowerCase().contains(consulta.toLowerCase()) || producto.getCodigo().toLowerCase().contains(consulta.toLowerCase())) {
+                                    mProductoList.add(producto);
                                 }
-                                mAdapter = new CategoriaAdapter(getActivity(), mCategoryList);
+                                mAdapter = new ProductoAdapter(getActivity(), mProductoList);
                                 mRecycler.setAdapter(mAdapter);
                             }
 

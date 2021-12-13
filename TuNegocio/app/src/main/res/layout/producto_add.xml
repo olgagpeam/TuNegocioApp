@@ -15,9 +15,10 @@
             android:background="@color/primaryDark">
 
             <ImageButton
+                android:id="@+id/regresarPro"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft = "10dp"
                 android:background="@color/primaryDark"
                 android:src="@drawable/ic_regresar" />
 
@@ -83,11 +84,28 @@
                     android:src="@drawable/ic_eliminar" />
             </LinearLayout>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_below="@+id/top">
+
+            <Button
+                android:id="@+id/buttonAgregar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_camara"
+                android:drawableTint="@color/white"
+                android:text="@string/form_add" />
+
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/top"
+            android:layout_below="@+id/linear"
             android:padding="10dp">
 
             <TextView
@@ -150,31 +168,42 @@
                 android:text="Unidad"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
-            <Spinner
+            <EditText
                 android:id="@+id/etUnidad"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCantidad"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvUnidad"
+                android:text="00"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spUnidad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvCantidad"
-                android:layout_alignStart="@+id/etNombre"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_toEndOf="@+id/tvUnidad" />
+                android:layout_toEndOf="@+id/etUnidad" />
 
             <TextView
                 android:id="@+id/tvCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvUnidad"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="10dp"
                 android:text="Categoria"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
             <Spinner
-                android:id="@+id/etCategoria"
+                android:id="@+id/spCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvUnidad"
-                android:layout_alignStart="@+id/etNombre"
-                android:layout_marginTop="1dp"
+                android:layout_alignStart="@+id/spUnidad"
+                android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/tvCategoria" />
 
 
@@ -185,8 +214,8 @@
                 android:layout_below="@+id/tvCategoria"
                 android:layout_marginTop="12dp"
                 android:text="Precio de Compra"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                android:textSize="16dp" />
+                android:textSize="16sp"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
             <EditText
                 android:id="@+id/etPrecioCompra"
@@ -194,7 +223,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvPrecioCompra"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                />
 
             <TextView
                 android:id="@+id/tvPrecioVenta"
@@ -206,7 +236,7 @@
                 android:layout_toEndOf="@+id/tvPrecioCompra"
                 android:text="Precio de Venta"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/etPrecioVenta"
@@ -227,11 +257,11 @@
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
             <Spinner
-                android:id="@+id/etProveedor"
+                android:id="@+id/spProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etPrecioCompra"
-                android:layout_alignStart="@+id/etNombre"
+                android:layout_alignStart="@+id/spUnidad"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@+id/tvProveedor" />
 
@@ -239,7 +269,7 @@
                 android:id="@+id/tvDescripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvProveedor"
+                android:layout_below="@+id/spProveedor"
                 android:layout_marginTop="20dp"
                 android:text="Descripción"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
@@ -248,13 +278,13 @@
                 android:id="@+id/etDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/etProveedor"
+                android:layout_below="@+id/spProveedor"
                 android:layout_alignStart="@+id/etNombre"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@+id/tvDescripcion" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnagregarPro"
                 android:layout_width="343dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etDescripcion"
