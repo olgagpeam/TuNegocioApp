@@ -40,8 +40,8 @@ public class CategoryAdministrator extends Fragment {
     private CategoriaAdapter mAdapter;
     private RecyclerView mRecycler;
     private List<Categoria> mCategoryList;
-    FirebaseUser user;
-    FirebaseAuth auth;
+    private FirebaseUser user;
+    private FirebaseAuth auth;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

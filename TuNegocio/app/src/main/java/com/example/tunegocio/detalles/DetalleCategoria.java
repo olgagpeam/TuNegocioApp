@@ -50,7 +50,8 @@ public class DetalleCategoria extends AppCompatActivity {
         btneditar = findViewById(R.id.editCat);
         btneliminar = findViewById(R.id.deleteCat);
         etcategoria = findViewById(R.id.etCatEdit);
-        cat = getIntent().getStringExtra("nombreCategoria");
+        //
+        cat = getIntent().getStringExtra("nombreCategoria");//mismo nombre base de datos
         etcategoria.setText(cat);
         nDataBase = FirebaseDatabase.getInstance().getReference();
         auth = FirebaseAuth.getInstance();
@@ -58,12 +59,12 @@ public class DetalleCategoria extends AppCompatActivity {
 
         btneliminar.setOnClickListener(view -> {
             EliminarCat(cat);
-            onSupportNavigateUp();
+            onSupportNavigateUp(); //regresar a la vista/actividad anterior
             //EditarCategoria();
         });
         btneditar.setOnClickListener(view -> {
-            EditarCategoria();
-            EliminarCat(cat);
+            EliminarCat(cat); //eliminar viejo
+            EditarCategoria(); //agregar nuevo
             onSupportNavigateUp();
         });
         btnregresar.setOnClickListener(view -> {

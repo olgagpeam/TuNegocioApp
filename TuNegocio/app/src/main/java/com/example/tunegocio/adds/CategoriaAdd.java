@@ -25,12 +25,12 @@ import java.util.Map;
 
 public class CategoriaAdd extends AppCompatActivity {
 
-    FirebaseUser user;
-    FirebaseAuth auth;
-    DatabaseReference nDataBase;
-    EditText EditTextCategoria;
-    Button btnagregar;
-    ImageButton btnregresar;
+    private FirebaseUser user;
+    private FirebaseAuth auth;
+    private DatabaseReference nDataBase;
+    private EditText EditTextCategoria;
+    private Button btnagregar;
+    private ImageButton btnregresar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class CategoriaAdd extends AppCompatActivity {
         user = auth.getCurrentUser();
         btnagregar.setOnClickListener(view -> {
             ObtenerNegocio();
+            onBackPressed();
         });
         btnregresar.setOnClickListener(view -> {
             onBackPressed();
@@ -57,10 +58,11 @@ public class CategoriaAdd extends AppCompatActivity {
                 if(snapshot.exists()){
                     String nom =snapshot.child("nombrenegocio").getValue().toString();
                     nDataBase = FirebaseDatabase.getInstance().getReference(); //nodo raiz
+
                     String categoria = EditTextCategoria.getText().toString(); //edit-> cambiar
                     if(!categoria.isEmpty()) {
                         Map<String, Object> categoriaMap = new HashMap<>();
-                        categoriaMap.put("nombreCategoria", categoria); //nombre valor
+                        categoriaMap.put("nombreCategoria", categoria); //nombre k: "" igual al del modelo
                         nDataBase.child("Tienda").child(nom).child("Categoria").push().setValue(categoriaMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {

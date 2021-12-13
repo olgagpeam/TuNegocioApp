@@ -21,8 +21,8 @@
             android:id="@+id/imagenRecycler"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:src="@drawable/ic_categoria" />
-
+            android:src="@drawable/ic_producto" />
+<!--
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -37,7 +37,104 @@
                 android:textStyle="bold"
                 android:textColor="#000"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
+-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/tvIdP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="0000000000000"
+                android:textSize="15sp"
+                android:textColor="#000"/>
 
+            <TextView
+                android:id="@+id/tvNombreP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvIdP"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/form_product"
+                android:textSize="15sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/tvCantidadP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPrecioP"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/tvPrecioP"
+                android:text="Cantidad: "
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvUnidadP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvIdP"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/tvNombreP"
+                android:text="unidad"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvCantidadNumP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPrecioP"
+
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/tvCantidadP"
+                android:text="0"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvPrecioP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/tvIdP"
+                android:text="Precio Venta: $"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvPrecioNumP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/tvPrecioP"
+                android:text="00.00"
+                android:textSize="15sp" />
+<!--
+            <ImageButton
+                android:id="@+id/ibEditar"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/orange"
+                android:src="@drawable/ic_editar"
+                app:tint="@color/white" />
+
+            <ImageButton
+                android:id="@+id/ibEliminar"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/ibEditar"
+                android:layout_alignParentRight="true"
+                android:background="@color/red"
+                android:src="@drawable/ic_eliminar"
+                app:tint="@color/white" />
+-->
+        </RelativeLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.cardview.widget.CardView>

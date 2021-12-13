@@ -62,8 +62,8 @@ public class DetalleUnidad extends AppCompatActivity {
             //EditarCategoria();
         });
         btneditar.setOnClickListener(view -> {
-            EditarCategoria();
             EliminarCat(uni);
+            EditarCategoria();
             onSupportNavigateUp();
         });
         btnregresar.setOnClickListener(view -> {
