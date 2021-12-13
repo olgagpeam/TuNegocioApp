@@ -27,7 +27,7 @@
         <item
             android:id="@+id/nav_empleados"
             android:icon="@drawable/ic_menu_empleado"
-            android:title="Proveedores" />
+            android:title="Empleados" />
         <item
             android:id="@+id/nav_categoria"
             android:icon="@drawable/ic_categoria"

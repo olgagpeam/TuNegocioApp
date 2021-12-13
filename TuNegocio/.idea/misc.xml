@@ -108,6 +108,7 @@
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/password.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_add.xml" value="0.2" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_detalle.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_detalle_edit.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_fragment.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_item.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_lista.xml" value="0.25" />
@@ -120,6 +121,7 @@
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/menu/activity_home_navigation_drawer.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/menu/menu_administrator_nav_drawer.xml" value="0.2359375" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/menu/menu_cat.xml" value="0.1" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/menu/menu_uni.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

@@ -58,10 +58,10 @@ public class UnidadAdapter extends RecyclerView.Adapter<UnidadAdapter.MyHolder> 
 
     public class MyHolder extends RecyclerView.ViewHolder {
         //Declaramos las vistas
-        EditText unit;
+        TextView unit;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
-            unit = itemView.findViewById(R.id.etUnidadEdit);
+            unit = itemView.findViewById(R.id.unidadname);
         }
 
     }

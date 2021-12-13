@@ -37,9 +37,14 @@
 
         <activity android:name=".detalles.DetalleCategoria">
         </activity>
+        <activity android:name=".detalles.DetalleUnidad">
+        </activity>
         <activity android:name=".adds.ProductoAdd">
         </activity>
         <activity android:name=".adds.CategoriaAdd">
+        </activity>
+
+        <activity android:name=".adds.UnidadAdd">
         </activity>
         <activity android:name=".ActivityInfBusiness">
         </activity>
