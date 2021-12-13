@@ -1,7 +1,12 @@
 package com.example.tunegocio;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ActivityResetPassword extends AppCompatActivity {
+public class ActivityResetPassword extends AppCompatActivity implements SensorEventListener {
     FirebaseAuth auth;
     Usuario mViewModel;
     EditText etCorreo;
@@ -28,7 +33,8 @@ public class ActivityResetPassword extends AppCompatActivity {
     //Crear una clase Usuario
     String correo;
     ProgressDialog progressDialog;
-;
+    private SensorManager sensorManager;
+    private Sensor pressure;
 
 
     @Override
@@ -60,6 +66,11 @@ public class ActivityResetPassword extends AppCompatActivity {
         });
         mViewModel = new ViewModelProvider(this).get(Usuario.class);
         etCorreo.setText(mViewModel.correo);
+
+
+        // a particular sensor.
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        pressure = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
     }
 
     private void  restablecerContra(){
@@ -78,5 +89,29 @@ public class ActivityResetPassword extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        float millibarsOfPressure = sensorEvent.values[0];
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+
+    }
+
+    @Override
+    protected void onResume() {
+        // Register a listener for the sensor.
+        super.onResume();
+        sensorManager.registerListener(this, pressure, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        // Be sure to unregister the sensor when the activity pauses.
+        super.onPause();
+        sensorManager.unregisterListener(this);
     }
 }

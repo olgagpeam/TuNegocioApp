@@ -22,7 +22,6 @@ public class ActivityInfBusiness extends AppCompatActivity {
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //startActivity(new Intent(ActivityInfBusiness.this, FingerprintAdministrator.class));
                 finish();
 
             }
