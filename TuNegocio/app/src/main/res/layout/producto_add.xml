@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,20 +18,20 @@
                 android:id="@+id/regresarPro"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft = "10dp"
+                android:layout_marginLeft="10dp"
                 android:background="@color/primaryDark"
                 android:src="@drawable/ic_regresar" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="35dp"
                 android:background="@color/primaryDark"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="@string/form_product"
                 android:textColor="@android:color/white"
-                android:textSize="25sp"
-                android:layout_marginEnd="35dp"/>
+                android:textSize="25sp" />
 
         </LinearLayout>
 
@@ -84,13 +84,14 @@
                     android:src="@drawable/ic_eliminar" />
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/top"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_below="@+id/top">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/buttonAgregar"
@@ -176,8 +177,16 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/tvUnidad"
-                android:text="00"
                 android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etUniSpP"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCantidad"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/etUnidad"
+                android:textSize="20dp" />
 
             <Spinner
                 android:id="@+id/spUnidad"
@@ -186,16 +195,26 @@
                 android:layout_below="@+id/tvCantidad"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_toEndOf="@+id/etUnidad" />
+                android:layout_toEndOf="@+id/etUniSpP" />
 
             <TextView
                 android:id="@+id/tvCategoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvUnidad"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="11dp"
                 android:text="Categoria"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/etCat"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvUnidad"
+                android:layout_marginStart="3dp"
+                android:layout_toEndOf="@+id/tvCategoria"
+                android:textSize="20sp" />
 
             <Spinner
                 android:id="@+id/spCategoria"
@@ -214,8 +233,8 @@
                 android:layout_below="@+id/tvCategoria"
                 android:layout_marginTop="12dp"
                 android:text="Precio de Compra"
-                android:textSize="16sp"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/etPrecioCompra"
@@ -223,8 +242,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvPrecioCompra"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                />
+                android:layout_marginTop="4dp" />
 
             <TextView
                 android:id="@+id/tvPrecioVenta"
@@ -256,12 +274,23 @@
                 android:text="Proveedor"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
+
+            <EditText
+                android:id="@+id/etProveedor"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etPrecioCompra"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvProveedor"
+                android:textSize="20sp" />
+
             <Spinner
                 android:id="@+id/spProveedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etPrecioCompra"
-                android:layout_alignStart="@+id/spUnidad"
+                android:layout_alignStart="@+id/etPrecioVenta"
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@+id/tvProveedor" />
 
@@ -280,7 +309,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/spProveedor"
                 android:layout_alignStart="@+id/etNombre"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_toEndOf="@+id/tvDescripcion" />
 
             <Button

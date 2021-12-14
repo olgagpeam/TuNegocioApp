@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tunegocio.Models.Unidad;
 import com.example.tunegocio.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProductoAdd extends AppCompatActivity {
@@ -35,6 +37,8 @@ public class ProductoAdd extends AppCompatActivity {
     private Spinner proveedor, unidad, categoria;
     private Button btnagregar;
     private ImageButton btnregresar;
+    private List<Unidad> UnidadList;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +57,7 @@ public class ProductoAdd extends AppCompatActivity {
         btnagregar = findViewById(R.id.btnagregarPro);
         btnregresar = findViewById(R.id.regresarPro);
 
-        auth = FirebaseAuth.getInstance ();
+        auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         btnagregar.setOnClickListener(view -> {
             ObtenerNegocio();
@@ -63,14 +67,60 @@ public class ProductoAdd extends AppCompatActivity {
             onBackPressed();
         });
 
+        submitbtn.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                interested.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        interesting = interested.getItemAtPosition(i).toString();
+                    }
+
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+                    }
+                });
+            }
+        });
+        unidad.setOnClickListener(view -> {
+            user = auth.getCurrentUser();
+            nDataBase = FirebaseDatabase.getInstance().getReference(); //hace referencia a la raiz
+            nDataBase.child("Usuaro").child("Adiminastrador").child(user.getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        String nom = snapshot.child("nombrenegocio").getValue().toString();
+                        nDataBase = FirebaseDatabase.getInstance().getReference(); //nodo raiz
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tienda");
+                        reference.child(nom).child("Unidad").orderByChild("nombreUnidad").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                UnidadList.clear();
+                                for (DataSnapshot ds : snapshot.getChildren()) {
+                                    Unidad unidad = ds.getValue(Unidad.class);
+                                    UnidadList.add(unidad);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                }
+            });
+
+
+        });
     }
 
-    private void ObtenerNegocio(){
+    private void ObtenerNegocio() {
         nDataBase = FirebaseDatabase.getInstance().getReference(); //hace referencia a la raiz
         nDataBase.child("Usuaro").child("Adiminastrador").child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
                     String nom = snapshot.child("nombrenegocio").getValue().toString();
                     nDataBase = FirebaseDatabase.getInstance().getReference(); //nodo raiz
 
@@ -78,14 +128,14 @@ public class ProductoAdd extends AppCompatActivity {
                     String producto = nombre.getText().toString();
                     String pC = precioC.getText().toString();
                     String pV = precioV.getText().toString();
-                   // String provee = .getText().toString();
+                    // String provee = .getText().toString();
                     //String uni = EditTextCategoria.getText().toString();
                     //String cat = EditTextCategoria.getText().toString();
-                    String descrip= descripcion.getText().toString();
+                    String descrip = descripcion.getText().toString();
                     //String imagen = imageView.getText().toString();
 
 
-                    if(!id.isEmpty() && !producto.isEmpty() && !pC.isEmpty() && !pV.isEmpty()) {
+                    if (!id.isEmpty() && !producto.isEmpty() && !pC.isEmpty() && !pV.isEmpty()) {
                         Map<String, Object> categoriaMap = new HashMap<>();
                         categoriaMap.put("codigo", id);
                         categoriaMap.put("nombreProducto", producto); //nombre k: "" igual al del modelo
@@ -100,16 +150,16 @@ public class ProductoAdd extends AppCompatActivity {
                         nDataBase.child("Tienda").child(nom).child("Producto").push().setValue(categoriaMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-                                    Toast.makeText(ProductoAdd.this,"Producto añadida con éxito",Toast.LENGTH_SHORT).show();
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(ProductoAdd.this, "Producto añadida con éxito", Toast.LENGTH_SHORT).show();
 
-                                }else {
-                                    Toast.makeText(ProductoAdd.this,"No se pudo crear los datos correctamente",Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(ProductoAdd.this, "No se pudo crear los datos correctamente", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
-                    }else{
-                        Toast.makeText(ProductoAdd.this,"Debe llenar los campos",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(ProductoAdd.this, "Debe llenar los campos", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -120,6 +170,7 @@ public class ProductoAdd extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();

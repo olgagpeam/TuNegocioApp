@@ -64,8 +64,8 @@ public class MainActivityAdministrator extends AppCompatActivity
     });
     if(savedInstanceState==null){ //fragment principal
       getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
-              new ProductAdministrator()).commit();
-      navigationView.setCheckedItem(R.id.nav_inventario);
+              new CategoryAdministrator()).commit();
+      navigationView.setCheckedItem(R.id.nav_categoria);
     }
   }
 
