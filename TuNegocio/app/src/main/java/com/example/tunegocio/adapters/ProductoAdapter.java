@@ -45,20 +45,18 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyHold
         String categoria = productos.get(position).getCategoria();
         String descripcion = productos.get(position).getDescripcion();
         String proveedor = productos.get(position).getProveedor();
-        float precioCompra = productos.get(position).getPrecioCompra();
-        float precioVenta = productos.get(position).getPrecioVenta();
-        String precioC = String.valueOf(precioCompra);
-        String precioV = String.valueOf(precioVenta);
-
+        String precioCompra = productos.get(position).getPrecioCompra();
+        String precioVenta = productos.get(position).getPrecioVenta();
+       // String precioC = String.valueOf(precioCompra);
+        //String precioV = String.valueOf(precioVenta);
+        String cantidad = productos.get(position).getCantidad();
         //setear datos en la vista del item
         holder.id.setText(codigo);
         holder.nombre.setText(nombreproducto);
         holder.unidad.setText(unidad);
-        holder.categoria.setText(categoria);
-        holder.descripcion.setText(descripcion);
         //holder.precioC.setText(proveedor);
-        holder.precioC.setText(precioC);
-        holder.precioV.setText(precioV);
+        holder.precioC.setText(precioCompra);
+        holder.cantidad.setText(cantidad);
 /*
         try {
         Picasso.get().load(IMAGEN).placeholder(R.drawable.perfil_item).into(holder.imagenRecycler);
@@ -76,8 +74,9 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyHold
             intent.putExtra("categoria", categoria);
             intent.putExtra("descripcion", descripcion);
             intent.putExtra("proveedor", proveedor);
-            intent.putExtra("precioCompra", precioC);
-            intent.putExtra("precioVenta", precioV);
+            intent.putExtra("precioCompra", precioCompra);
+            intent.putExtra("precioVenta", precioVenta);
+            intent.putExtra("cantidad", cantidad);
             context.startActivity(intent);
         });
     }
@@ -89,20 +88,19 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.MyHold
 
     public class MyHolder extends RecyclerView.ViewHolder {
         //Declaramos las vistas
-        CircleImageView imagenRecycler;
-        TextView id, nombre, unidad, categoria, descripcion, proveedor, precioC, precioV;
+        //CircleImageView imagenRecycler;
+        TextView id, nombre, unidad, categoria, descripcion, precioC, precioV, cantidad;
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
-            imagenRecycler = itemView.findViewById(R.id.imagenRecycler);
+            //imagenRecycler = itemView.findViewById(R.id.imagenRecycler);
             id = itemView.findViewById(R.id.tvIdP);
             nombre = itemView.findViewById(R.id.tvNombreP);
-            unidad = itemView.findViewById(R.id.tvUnidad);
-            categoria = itemView.findViewById(R.id.tvNombreP);
-            descripcion = itemView.findViewById(R.id.tvNombreP);
+            unidad = itemView.findViewById(R.id.tvUnidadP);
             //proveedor = itemView.findViewById(R.id.tvNombreP);
-            precioC = itemView.findViewById(R.id.tvNombreP);
-            precioV = itemView.findViewById(R.id.tvNombreP);
+            precioC = itemView.findViewById(R.id.tvPrecioNumP);
+            cantidad = itemView.findViewById(R.id.tvCantidadNumP);
+
         }
 
     }

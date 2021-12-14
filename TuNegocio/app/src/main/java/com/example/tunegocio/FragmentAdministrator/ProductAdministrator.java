@@ -83,11 +83,13 @@ public class ProductAdministrator extends Fragment {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             mProductoList.clear();
-                            for (DataSnapshot ds : snapshot.getChildren()) {
-                                Producto producto = ds.getValue(Producto.class);
-                                mProductoList.add(producto);
-                                mAdapter = new ProductoAdapter(getActivity(), mProductoList);
-                                mRecycler.setAdapter(mAdapter);
+                            if (snapshot.exists()) {
+                                for (DataSnapshot ds : snapshot.getChildren()) {
+                                    Producto producto = ds.getValue(Producto.class);
+                                    mProductoList.add(producto);
+                                    mAdapter = new ProductoAdapter(getActivity(), mProductoList);
+                                    mRecycler.setAdapter(mAdapter);
+                                }
                             }
                         }
 

@@ -17,4 +17,9 @@ public class Unidad {
     public void setNombreUnidad(String nombreUnidad) {
         this.nombreUnidad = nombreUnidad;
     }
+
+    @Override
+    public String toString() {
+        return nombreUnidad;
+    }
 }

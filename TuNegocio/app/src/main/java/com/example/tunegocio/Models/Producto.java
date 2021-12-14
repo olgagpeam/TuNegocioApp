@@ -1,13 +1,12 @@
 package com.example.tunegocio.Models;
 
 public class Producto {
-    private String codigo, nombreProducto, unidad, categoria, descripcion, proveedor;
-    private float precioCompra, precioVenta;
+    private String codigo, nombreProducto, unidad, categoria, descripcion, proveedor, precioCompra, precioVenta, cantidad;
 
     public Producto() {
     }
 
-    public Producto(String codigo, String nombreProducto, String unidad, String categoria, String descripcion, String proveedor, float precioCompra, float precioVenta) {
+    public Producto(String codigo, String nombreProducto, String unidad, String categoria, String descripcion, String proveedor, String precioCompra, String precioVenta, String cantidad) {
         this.codigo = codigo;
         this.nombreProducto = nombreProducto;
         this.unidad = unidad;
@@ -16,6 +15,7 @@ public class Producto {
         this.proveedor = proveedor;
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
+        this.cantidad = cantidad;
     }
 
     public String getCodigo() {
@@ -65,19 +65,26 @@ public class Producto {
         this.proveedor = proveedor;
     }
 
-    public float getPrecioCompra() {
+    public String getPrecioCompra() {
         return precioCompra;
     }
 
-    public void setPrecioCompra(float precioCompra) {
+    public void setPrecioCompra(String precioCompra) {
         this.precioCompra = precioCompra;
     }
 
-    public float getPrecioVenta() {
+    public String getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(float precioVenta) {
+    public void setPrecioVenta(String precioVenta) {
         this.precioVenta = precioVenta;
+    }
+    public String getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 }

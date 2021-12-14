@@ -170,7 +170,7 @@
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
             <EditText
-                android:id="@+id/etUnidad"
+                android:id="@+id/etUnidadP"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvCantidad"
@@ -185,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvCantidad"
                 android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/etUnidad"
+                android:layout_toEndOf="@+id/etUnidadP"
                 android:textSize="20dp" />
 
             <Spinner
