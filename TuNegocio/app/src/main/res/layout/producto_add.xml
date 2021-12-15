@@ -44,47 +44,16 @@
 
             <ImageView
                 android:id="@+id/imageproducto"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:src="@drawable/ic_producto" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/botoncamara"
-                    android:layout_width="51dp"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="5dp"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_camara" />
-
-                <ImageButton
-                    android:id="@+id/botongaleria"
-                    android:layout_width="51dp"
-                    android:layout_height="36dp"
-
-                    android:layout_marginTop="5dp"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_galeria" />
-
-                <ImageButton
-                    android:id="@+id/botoneliminar"
-                    android:layout_width="51dp"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="5dp"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/ic_eliminar" />
-            </LinearLayout>
         </LinearLayout>
-
+<!--
         <LinearLayout
             android:id="@+id/linear"
             android:layout_width="match_parent"
@@ -102,11 +71,11 @@
                 android:text="@string/form_add" />
 
         </LinearLayout>
-
+-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linear"
+            android:layout_below="@+id/top"
             android:padding="10dp">
 
             <TextView
@@ -160,78 +129,74 @@
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/tvCantidad" />
 
-            <TextView
-                android:id="@+id/tvUnidad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCantidad"
-                android:layout_marginTop="20dp"
-                android:text="Unidad"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
-            <EditText
-                android:id="@+id/etUnidadP"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvCantidad"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/tvUnidad"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/etUniSpP"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCantidad"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/etUnidadP"
-                android:textSize="20dp" />
-
-            <Spinner
-                android:id="@+id/spUnidad"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/unidadLinear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCantidad"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_toEndOf="@+id/etUniSpP" />
+                android:layout_below="@+id/etPrecioCompra"
+                android:layout_marginTop="20dp">
 
-            <TextView
-                android:id="@+id/tvCategoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvUnidad"
-                android:layout_marginTop="11dp"
-                android:text="Categoria"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/tvUnidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvCantidad"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/form_unit"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
-            <EditText
-                android:id="@+id/etCat"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvUnidad"
-                android:layout_marginStart="3dp"
-                android:layout_toEndOf="@+id/tvCategoria"
-                android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/etUnidadP"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp" />
 
-            <Spinner
-                android:id="@+id/spCategoria"
+                <Spinner
+                    android:id="@+id/spUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tvCantidad"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="10dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/catLinear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvUnidad"
-                android:layout_alignStart="@+id/spUnidad"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/tvCategoria" />
+                android:layout_below="@+id/unidadLinear"
+                android:layout_marginTop="20dp">
 
+                <TextView
+                    android:id="@+id/tvCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:text="@string/form_category"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/spCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/unidadLinear"
+                    android:layout_alignBottom="@+id/tvCategoria"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginStart="20dp"
+                    android:padding="5dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <TextView
                 android:id="@+id/tvPrecioCompra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCategoria"
-                android:layout_marginTop="12dp"
+                android:layout_below="@+id/tvCantidad"
+                android:layout_marginTop="20dp"
                 android:text="Precio de Compra"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
                 android:textSize="16sp" />
@@ -248,9 +213,9 @@
                 android:id="@+id/tvPrecioVenta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCategoria"
+                android:layout_below="@+id/tvCantidad"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:layout_toEndOf="@+id/tvPrecioCompra"
                 android:text="Precio de Venta"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
@@ -265,40 +230,12 @@
                 android:layout_marginTop="4dp"
                 android:layout_toEndOf="@+id/etPrecioCompra" />
 
-            <TextView
-                android:id="@+id/tvProveedor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/etPrecioCompra"
-                android:layout_marginTop="20dp"
-                android:text="Proveedor"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
-
-            <EditText
-                android:id="@+id/etProveedor"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/etPrecioCompra"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/tvProveedor"
-                android:textSize="20sp" />
-
-            <Spinner
-                android:id="@+id/spProveedor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/etPrecioCompra"
-                android:layout_alignStart="@+id/etPrecioVenta"
-                android:layout_marginTop="20dp"
-                android:layout_toEndOf="@+id/tvProveedor" />
 
             <TextView
                 android:id="@+id/tvDescripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/spProveedor"
+                android:layout_below="@+id/catLinear"
                 android:layout_marginTop="20dp"
                 android:text="Descripción"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
@@ -307,19 +244,26 @@
                 android:id="@+id/etDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/spProveedor"
+                android:layout_below="@+id/catLinear"
                 android:layout_alignStart="@+id/etNombre"
                 android:layout_marginTop="15dp"
                 android:layout_toEndOf="@+id/tvDescripcion" />
 
-            <Button
-                android:id="@+id/btnagregarPro"
-                android:layout_width="343dp"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etDescripcion"
-                android:layout_centerHorizontal="true"
-                android:text="@string/form_add" />
+                android:layout_marginTop="21dp"
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/btnAgregarP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etDescripcion"
+                    android:text="@string/form_add" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </RelativeLayout>
     </RelativeLayout>
 </ScrollView>

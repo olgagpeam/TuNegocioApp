@@ -69,7 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvPrecioP"
                 android:layout_marginTop="5dp"
-                android:layout_toEndOf="@id/tvPrecioP"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/tvUnidadP"
                 android:text="Cantidad: "
                 android:textSize="15sp" />
 
@@ -78,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvIdP"
-                android:layout_marginStart="60dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/tvNombreP"
                 android:text="unidad"
@@ -90,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvPrecioP"
 
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/tvCantidadP"
                 android:text="0"
@@ -110,7 +111,7 @@
                 android:id="@+id/tvPrecioNumP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/tvPrecioP"
                 android:text="00.00"

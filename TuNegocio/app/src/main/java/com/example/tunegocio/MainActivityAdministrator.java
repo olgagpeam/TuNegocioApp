@@ -13,8 +13,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.tunegocio.FragmentAdministrator.CustomerAdministrator;
 import com.example.tunegocio.FragmentAdministrator.CategoryAdministrator;
+import com.example.tunegocio.FragmentAdministrator.ClientAdministrator;
 import com.example.tunegocio.FragmentAdministrator.EmployeeAdministrador;
 import com.example.tunegocio.FragmentAdministrator.FingerprintAdministrator;
 import com.example.tunegocio.FragmentAdministrator.ProductAdministrator;
@@ -92,7 +92,7 @@ public class MainActivityAdministrator extends AppCompatActivity
         break;
       case R.id.nav_clientes:
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
-              new CustomerAdministrator()).commit();
+              new ClientAdministrator()).commit();
         break;
       case R.id.nav_informes:
         title = R.string.menu_informes;

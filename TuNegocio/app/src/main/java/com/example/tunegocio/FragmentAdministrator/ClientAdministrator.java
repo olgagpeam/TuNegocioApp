@@ -18,8 +18,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tunegocio.Models.Categoria;
-import com.example.tunegocio.adapters.CategoriaAdapter;
+import com.example.tunegocio.Models.Cliente;
+import com.example.tunegocio.adapters.ClienteAdapter;
+import com.example.tunegocio.adds.ClienteAdd;
 import com.example.tunegocio.adds.ProductoAdd;
 import com.example.tunegocio.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -34,24 +35,22 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.tunegocio.adapters.ProductoAdapter;
-import com.example.tunegocio.Models.Producto;
 
-public class ProductAdministrator extends Fragment {
+public class ClientAdministrator extends Fragment {
     private DatabaseReference mDataBase;
-    private ProductoAdapter mAdapter;
+    private ClienteAdapter mAdapter;
     private RecyclerView mRecycler;
-    private List<Producto> mProductoList;
+    private List<Cliente> mClienteList;
     FirebaseAuth auth;
     FirebaseUser user;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.producto_fragment, container, false);
+        View view = inflater.inflate(R.layout.cliente_fragment, container, false);
         mRecycler = view.findViewById(R.id.recycler);
         mRecycler.setHasFixedSize(true);
         mRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-        mProductoList = new ArrayList<>();
+        mClienteList = new ArrayList<>();
         auth = FirebaseAuth.getInstance();
 
         ObtenerLista();
@@ -62,7 +61,7 @@ public class ProductAdministrator extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), ProductoAdd.class));
+                startActivity(new Intent(getActivity(), ClienteAdd.class));
             }
         });
         return view;
@@ -77,16 +76,19 @@ public class ProductAdministrator extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     String nom = snapshot.child("nombrenegocio").getValue().toString();
+                    mDataBase = FirebaseDatabase.getInstance().getReference(); //nodo raiz
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tienda");
-                    reference.child(nom).child("Producto").orderByChild("hash").addValueEventListener(new ValueEventListener() {
+                    reference.child(nom).child("Cliente").orderByChild("nombreCompleto").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            mProductoList.clear();
-                            for (DataSnapshot ds : snapshot.getChildren()) {
-                                Producto producto = ds.getValue(Producto.class);
-                                mProductoList.add(producto);
-                                mAdapter = new ProductoAdapter(getActivity(), mProductoList);
-                                mRecycler.setAdapter(mAdapter);
+                            mClienteList.clear();
+                            if (snapshot.exists()) {
+                                for (DataSnapshot ds : snapshot.getChildren()) {
+                                    Cliente cliente = ds.getValue(Cliente.class);
+                                    mClienteList.add(cliente);
+                                    mAdapter = new ClienteAdapter(getActivity(), mClienteList);
+                                    mRecycler.setAdapter(mAdapter);
+                                }
                             }
                         }
 
@@ -118,16 +120,16 @@ public class ProductAdministrator extends Fragment {
                     String nom = snapshot.child("nombrenegocio").getValue().toString();
                     mDataBase = FirebaseDatabase.getInstance().getReference(); //nodo raiz
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tienda");
-                    reference.child(nom).child("Producto").orderByChild("nombreProducto").addValueEventListener(new ValueEventListener() {
+                    reference.child(nom).child("Cliente").orderByChild("nombreCompleto").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            mProductoList.clear();
+                            mClienteList.clear();
                             for (DataSnapshot ds : snapshot.getChildren()) {
-                                Producto producto = ds.getValue(Producto.class);
-                                if (producto.getNombreProducto().toLowerCase().contains(consulta.toLowerCase()) || producto.getCodigo().toLowerCase().contains(consulta.toLowerCase())) {
-                                    mProductoList.add(producto);
+                                Cliente cliente = ds.getValue(Cliente.class);
+                                if (cliente.getNombreCompleto().toLowerCase().contains(consulta.toLowerCase()) || cliente.getAlias().toLowerCase().contains(consulta.toLowerCase())) {
+                                    mClienteList.add(cliente);
                                 }
-                                mAdapter = new ProductoAdapter(getActivity(), mProductoList);
+                                mAdapter = new ClienteAdapter(getActivity(), mClienteList);
                                 mRecycler.setAdapter(mAdapter);
                             }
 

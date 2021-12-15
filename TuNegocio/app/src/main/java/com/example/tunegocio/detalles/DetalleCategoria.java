@@ -50,7 +50,7 @@ public class DetalleCategoria extends AppCompatActivity {
         btneditar = findViewById(R.id.editCat);
         btneliminar = findViewById(R.id.deleteCat);
         etcategoria = findViewById(R.id.etCatEdit);
-        //
+
         cat = getIntent().getStringExtra("nombreCategoria");//mismo nombre base de datos
         etcategoria.setText(cat);
         nDataBase = FirebaseDatabase.getInstance().getReference();

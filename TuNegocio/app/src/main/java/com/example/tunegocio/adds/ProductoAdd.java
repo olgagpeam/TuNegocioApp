@@ -1,6 +1,16 @@
 package com.example.tunegocio.adds;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,12 +22,18 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import com.example.tunegocio.MainActivityAdministrator;
 import com.example.tunegocio.Models.Categoria;
 import com.example.tunegocio.Models.Unidad;
 import com.example.tunegocio.R;
+import com.example.tunegocio.detalles.DetalleProducto;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,7 +41,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,14 +59,14 @@ public class ProductoAdd extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference nDataBase;
     private ImageView imageView;
-    private EditText clave, nombre, cantidad, precioC, precioV, descripcion, etUnidad, etUnidadSpinner, etCategoria, etCategoriaSpinner;
-    private Spinner proveedor, unidad, categoria;
+    private EditText clave, nombre, cantidad, precioC, precioV, descripcion, etUnidad;
+    private Spinner unidad, categoria;
     private Button btnagregar;
     private ImageButton btnregresar;
     private List<Unidad> UnidadList = new ArrayList<>();
     private List<Categoria> CategoriaList = new ArrayList<>();
-    //private List<Proveedor> UnidadList = new ArrayList<>();
-    private String unidadActual, categoriaActual="", proveedorActual = "";
+    private String hash, unidadActual, categoriaActual = "";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,23 +78,23 @@ public class ProductoAdd extends AppCompatActivity {
         cantidad = findViewById(R.id.etCantidad);
         precioC = findViewById(R.id.etPrecioCompra);
         precioV = findViewById(R.id.etPrecioVenta);
-        proveedor = findViewById(R.id.spProveedor);
         unidad = findViewById(R.id.spUnidad);
         etUnidad = findViewById(R.id.etUnidadP);
-        etUnidadSpinner = findViewById(R.id.etUniSpP);
-        etCategoria = findViewById(R.id.etCat);
         categoria = findViewById(R.id.spCategoria);
         descripcion = findViewById(R.id.etDescripcion);
 
-        btnagregar = findViewById(R.id.btnagregarPro);
+        btnagregar = findViewById(R.id.btnAgregarP);
         btnregresar = findViewById(R.id.regresarPro);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+
         CargarUnidad();
         btnagregar.setOnClickListener(view -> {
-            ObtenerNegocio(unidadActual, categoriaActual, proveedorActual);
-            onBackPressed();
+            int flag = ObtenerNegocio(unidadActual, categoriaActual);
+            if (flag == -1) {
+                onBackPressed();
+            }
         });
         btnregresar.setOnClickListener(view -> {
             onBackPressed();
@@ -106,7 +127,6 @@ public class ProductoAdd extends AppCompatActivity {
                                 @Override
                                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                     unidadActual = adapterView.getItemAtPosition(i).toString();
-                                    etUnidadSpinner.setText(unidadActual);
                                 }
 
                                 @Override
@@ -138,7 +158,7 @@ public class ProductoAdd extends AppCompatActivity {
                                 @Override
                                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                     categoriaActual = adapterView.getItemAtPosition(i).toString();
-                                    etCategoria.setText(categoriaActual);
+                                    //etCategoria.setText(categoriaActual);
                                 }
 
                                 @Override
@@ -165,7 +185,7 @@ public class ProductoAdd extends AppCompatActivity {
 
     }
 
-    private void ObtenerNegocio(String unit, String category, String provider) {
+    private int ObtenerNegocio(String unit, String category) {
         nDataBase = FirebaseDatabase.getInstance().getReference(); //hace referencia a la raiz
         nDataBase.child("Usuaro").child("Adiminastrador").child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
@@ -178,38 +198,80 @@ public class ProductoAdd extends AppCompatActivity {
                     String producto = nombre.getText().toString();
                     String pC = precioC.getText().toString();
                     String pV = precioV.getText().toString();
-                    //String provee = .getText().toString();
-                    String uni = etUnidadSpinner.getText().toString();
-                    String cat = etCategoria.getText().toString();
+                    String uni = etUnidad.getText().toString();
                     String descrip = descripcion.getText().toString();
+                    String cant = cantidad.getText().toString();
+                    if (!id.isEmpty() && !producto.isEmpty() && !pC.isEmpty() && !pV.isEmpty() && !cant.isEmpty()) {
+                        double pc = Double.parseDouble(pC);
+                        double pv = Double.parseDouble(pV);
+                        if (pc < pv) {
+                            Map<String, Object> productoMap = new HashMap<>();
+                            productoMap.put("codigo", id);
+                            productoMap.put("nombreProducto", producto); //nombre k: "" igual al del modelo
+                            productoMap.put("unidad", uni);
+                            productoMap.put("uni", unit);
+                            productoMap.put("categoria", category);
+                            productoMap.put("descripcion", descrip);
+                            productoMap.put("precioCompra", pC);
+                            productoMap.put("precioVenta", pV);
+                            productoMap.put("cantidad", cant);
+                            productoMap.put("imagen", "");
+                            nDataBase.child("Tienda").child(nom).child("Producto").push().setValue(productoMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        nDataBase = FirebaseDatabase.getInstance().getReference(); //hace referencia a la raiz
+                                        nDataBase.child("Usuaro").child("Adiminastrador").child(user.getUid()).addValueEventListener(new ValueEventListener() {
 
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                if (snapshot.exists()) {
+                                                    String nom = snapshot.child("nombrenegocio").getValue().toString();
+                                                    Map<String, Object> productoMap = new HashMap<>();
+                                                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                                                    Query query = reference.child("Tienda").child(nom).child("Producto").orderByChild("id").equalTo(id);
+                                                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                            for (DataSnapshot ds : snapshot.getChildren()) {
+                                                                String hash = ds.getRef().getKey().toString();
+                                                                productoMap.put("hash", hash);
+                                                                ds.getRef().updateChildren(productoMap);
+                                                            }
+                                                        }
 
-                    if (!id.isEmpty() && !producto.isEmpty() && !pC.isEmpty() && !pV.isEmpty()) {
-                        Map<String, Object> productoMap = new HashMap<>();
-                        productoMap.put("codigo", id);
-                        productoMap.put("nombreProducto", producto); //nombre k: "" igual al del modelo
-                        productoMap.put("unidad", unit);
-                        productoMap.put("categoria", category);
-                        productoMap.put("descripcion", descrip);
-                        productoMap.put("precioCompra", pC);
-                        productoMap.put("precioVenta", pV);
-                        productoMap.put("proveedor", provider);
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError error) {
 
-                        nDataBase.child("Tienda").child(nom).child("Producto").push().setValue(productoMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(ProductoAdd.this, "Producto añadida con éxito", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    });
 
-                                } else {
-                                    Toast.makeText(ProductoAdd.this, "No se pudo crear los datos correctamente", Toast.LENGTH_SHORT).show();
+                                                }
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError error) {
+
+                                            }
+                                        });
+                                        Toast.makeText(ProductoAdd.this, "Producto añadida con éxito", Toast.LENGTH_SHORT).show();
+
+                                    } else {
+                                        Toast.makeText(ProductoAdd.this, "No se pudo crear los datos correctamente", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+
+
+                        } else {
+                            Toast.makeText(ProductoAdd.this, "El precio de venta no puede ser menor al precio de compra", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
                         Toast.makeText(ProductoAdd.this, "Debe llenar los campos", Toast.LENGTH_SHORT).show();
                     }
                 }
+
             }
 
             @Override
@@ -217,6 +279,12 @@ public class ProductoAdd extends AppCompatActivity {
 
             }
         });
+        double pv = Double.parseDouble(precioV.getText().toString());
+        double pc = Double.parseDouble(precioC.getText().toString());
+        if (pc > pv) {
+            return 1;
+        }
+        return -1;
     }
 
     @Override
@@ -224,5 +292,6 @@ public class ProductoAdd extends AppCompatActivity {
         onBackPressed();
         return super.onSupportNavigateUp();
     }
+
 
 }

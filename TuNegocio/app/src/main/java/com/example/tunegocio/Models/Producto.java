@@ -1,21 +1,31 @@
 package com.example.tunegocio.Models;
 
 public class Producto {
-    private String codigo, nombreProducto, unidad, categoria, descripcion, proveedor, precioCompra, precioVenta, cantidad;
+    private String hash, codigo, nombreProducto, unidad, categoria, descripcion, precioCompra, precioVenta, cantidad, uni, imagen;
 
     public Producto() {
     }
 
-    public Producto(String codigo, String nombreProducto, String unidad, String categoria, String descripcion, String proveedor, String precioCompra, String precioVenta, String cantidad) {
+    public Producto(String hash, String codigo, String nombreProducto, String unidad, String categoria, String descripcion, String precioCompra, String precioVenta, String cantidad, String uni, String imagen) {
+        this.hash = hash;
         this.codigo = codigo;
         this.nombreProducto = nombreProducto;
         this.unidad = unidad;
         this.categoria = categoria;
         this.descripcion = descripcion;
-        this.proveedor = proveedor;
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
         this.cantidad = cantidad;
+        this.uni = uni;
+        this.imagen = imagen;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
     }
 
     public String getCodigo() {
@@ -57,14 +67,6 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public String getProveedor() {
-        return proveedor;
-    }
-
-    public void setProveedor(String proveedor) {
-        this.proveedor = proveedor;
-    }
-
     public String getPrecioCompra() {
         return precioCompra;
     }
@@ -80,11 +82,28 @@ public class Producto {
     public void setPrecioVenta(String precioVenta) {
         this.precioVenta = precioVenta;
     }
+
     public String getCantidad() {
         return cantidad;
     }
 
     public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getUni() {
+        return uni;
+    }
+
+    public void setUni(String uni) {
+        this.uni = uni;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }

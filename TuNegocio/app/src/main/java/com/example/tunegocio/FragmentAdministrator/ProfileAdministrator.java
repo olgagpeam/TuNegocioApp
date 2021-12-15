@@ -78,7 +78,6 @@ public class ProfileAdministrator extends Fragment {
     private ProgressDialog progressDialog;
     private static final int RESULT_OK=-1;
 
-    String nombnegocio="";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -249,7 +248,7 @@ public class ProfileAdministrator extends Fragment {
             public void onClick(DialogInterface dialogInterface, int i) {
 
                 if(i==0){
-                    imagen_perfil="imagen";
+                    imagen_perfil="";
                     ElegirFoto();
                 }
             }

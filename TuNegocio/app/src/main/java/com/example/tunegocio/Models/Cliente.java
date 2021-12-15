@@ -1,6 +1,7 @@
 package com.example.tunegocio.Models;
 
 public class Cliente {
+    public  String hash;
     public String nombreCompleto;
     public String alias;
     public String telefonoUno;
@@ -12,7 +13,8 @@ public class Cliente {
     public Cliente(){
     }
 
-    public Cliente(String nombreCompleto, String alias, String telefonoUno, String telefonoDos, String correo, String direccion, String descripcion) {
+    public Cliente(String hash,String nombreCompleto, String alias, String telefonoUno, String telefonoDos, String correo, String direccion, String descripcion) {
+        this.hash = hash;
         this.nombreCompleto = nombreCompleto;
         this.alias = alias;
         this.telefonoUno = telefonoUno;
@@ -20,6 +22,14 @@ public class Cliente {
         this.correo = correo;
         this.direccion = direccion;
         this.descripcion = descripcion;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
     }
 
     public String getNombreCompleto() {

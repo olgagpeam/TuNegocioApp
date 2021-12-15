@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryDark">
+
+            <ImageButton
+                android:id="@+id/btnRegresarC"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@color/primaryDark"
+                android:src="@drawable/ic_regresar" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="35dp"
+                android:background="@color/primaryDark"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Detalle Cliente"
+                android:textColor="@android:color/white"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imagecliente"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_menu_cliente" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="501dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_name"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etNombreC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvNombre" />
+
+            <TextView
+                android:id="@+id/tvAlias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNombre"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_alias"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etAliasC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etNombreC"
+                android:layout_alignStart="@+id/etNombreC"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvAlias" />
+
+            <TextView
+                android:id="@+id/tvTelefono1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvAlias"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_telephone1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etTelefono1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvAlias"
+                android:layout_alignStart="@+id/etNombreC"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvAlias" />
+
+            <TextView
+                android:id="@+id/tvTelefono2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTelefono1"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_telephone2"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etTelefono2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTelefono1"
+                android:layout_alignStart="@+id/etNombreC"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvTelefono2" />
+
+            <TextView
+                android:id="@+id/tvCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTelefono2"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_email"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTelefono2"
+                android:layout_alignStart="@+id/etNombreC"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvCorreo" />
+
+            <TextView
+                android:id="@+id/tvDireccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCorreo"
+                android:layout_marginTop="22dp"
+                android:text="@string/form_addres"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCorreo"
+                android:layout_alignStart="@+id/etNombreC"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvDireccion" />
+
+            <TextView
+                android:id="@+id/tvDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDireccion"
+                android:layout_marginTop="20dp"
+                android:text="@string/form_descrip"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+            <EditText
+                android:id="@+id/etDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDireccion"
+                android:layout_alignStart="@+id/etNombreC"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tvDescripcion" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etDescripcion"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnEditC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/form_add" />
+
+                <Button
+                    android:id="@+id/btnDelC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_toEndOf="@+id/btnEditC"
+                    android:backgroundTint="@color/red"
+                    android:text="Eliminar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

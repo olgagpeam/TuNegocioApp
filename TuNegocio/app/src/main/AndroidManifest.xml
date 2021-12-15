@@ -49,6 +49,11 @@
         <activity android:name=".ActivityInfBusiness">
         </activity>
 
+        <activity android:name=".adds.ClienteAdd">
+        </activity>
+        <activity android:name=".detalles.DetalleCliente">
+        </activity>
+
 
     </application>
 
