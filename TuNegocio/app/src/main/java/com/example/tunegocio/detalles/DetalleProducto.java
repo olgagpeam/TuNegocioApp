@@ -495,18 +495,19 @@ public class DetalleProducto extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (snapshot.exists()) {
                                         String nom = snapshot.child("nombrenegocio").getValue().toString();
-
-                                        nDataBase.child("Tienda").child(nom).child("Producto").updateChildren(results).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                                        Query query = reference.child("Tienda").child(nom).child("Producto").orderByChild("hash").equalTo(hash);
+                                        query.addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
-                                            public void onSuccess(Void unused) {
-                                                startActivity(new Intent(context, DetalleProducto.class));
-                                                Toast.makeText(context, "Imagen cambiada con éxito", Toast.LENGTH_SHORT).show();
-
+                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                for (DataSnapshot ds : snapshot.getChildren()) {
+                                                    ds.getRef().updateChildren(results);
+                                                }
                                             }
-                                        }).addOnFailureListener(new OnFailureListener() {
+
                                             @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(context, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                            public void onCancelled(@NonNull DatabaseError error) {
+
                                             }
                                         });
 
