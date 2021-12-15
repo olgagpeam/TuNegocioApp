@@ -64,8 +64,8 @@ public class MainActivityAdministrator extends AppCompatActivity
     });
     if(savedInstanceState==null){ //fragment principal
       getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
-              new CategoryAdministrator()).commit();
-      navigationView.setCheckedItem(R.id.nav_categoria);
+              new ProductAdministrator()).commit();
+      navigationView.setCheckedItem(R.id.nav_inventario);
     }
   }
 
@@ -101,10 +101,10 @@ public class MainActivityAdministrator extends AppCompatActivity
 
       //case R.id.nav_proveedores:
       //  break;
-      case R.id.nav_empleados:
-        getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
-                new EmployeeAdministrador()).commit();
-        break;
+      //case R.id.nav_empleados:
+       // getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
+       //         new EmployeeAdministrador()).commit();
+       // break;
       case R.id.nav_categoria:
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
                 new CategoryAdministrator()).commit();

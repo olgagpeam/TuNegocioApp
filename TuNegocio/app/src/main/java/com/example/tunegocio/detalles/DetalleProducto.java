@@ -31,6 +31,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import com.example.tunegocio.MainActivityAdministrator;
 import com.example.tunegocio.Models.Categoria;
 import com.example.tunegocio.Models.Unidad;
 import com.example.tunegocio.R;
@@ -322,9 +323,12 @@ public class DetalleProducto extends AppCompatActivity {
                     String uni = etUni.getText().toString();
                     String descrip = etDescrp.getText().toString();
                     String cant = etCantidad.getText().toString();
-                    double pc = Double.parseDouble(pC);
-                    double pv = Double.parseDouble(pV);
+
                     if (!id.isEmpty() && !producto.isEmpty() && !pC.isEmpty() && !pV.isEmpty() && !cant.isEmpty()) {
+                        double pc = 1;
+                        pc = Double.parseDouble(pC);
+                        double pv = 0;
+                        pv = Double.parseDouble(pV);
                         if (pc < pv) {
                             Map<String, Object> productoMap = new HashMap<>();
                             productoMap.put("codigo", id);
@@ -366,10 +370,14 @@ public class DetalleProducto extends AppCompatActivity {
 
             }
         });
-        double pv = Double.parseDouble(etPrecioV.getText().toString());
-        double pc = Double.parseDouble(etPrecioC.getText().toString());
-        if (pc > pv) {
-            return 1;
+        String pC = etPrecioC.getText().toString();
+        String pV = etPrecioV.getText().toString();
+        if (!pC.isEmpty() && !pV.isEmpty()) {
+            double pv = Double.parseDouble(pV);
+            double pc = Double.parseDouble(pC);
+            if (pc > pv) {
+                return 1;
+            }
         }
         return -1;
 
@@ -497,6 +505,7 @@ public class DetalleProducto extends AppCompatActivity {
                                         String nom = snapshot.child("nombrenegocio").getValue().toString();
                                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
                                         Query query = reference.child("Tienda").child(nom).child("Producto").orderByChild("hash").equalTo(hash);
+
                                         query.addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -510,6 +519,8 @@ public class DetalleProducto extends AppCompatActivity {
 
                                             }
                                         });
+                                        Toast.makeText(context, "Imagen cambiada con éxito", Toast.LENGTH_SHORT).show();
+                                        onBackPressed();
 
                                     }
 
@@ -550,9 +561,9 @@ public class DetalleProducto extends AppCompatActivity {
                 imagen_uri = data.getData();
                 ActualizarImagenEnBD(imagen_uri);
                 progressDialog.setTitle("Procesando");
-                progressDialog.setMessage("La imagen se esta cambiando,espere por favor...");
+                progressDialog.setMessage("La imagen se esta cambiando, espere por favor...");
                 progressDialog.setCancelable(false);
-                progressDialog.show();
+                //progressDialog.show();
 
             }
         }

@@ -91,7 +91,7 @@ public class ProductoAdd extends AppCompatActivity {
 
         CargarUnidad();
         btnagregar.setOnClickListener(view -> {
-            int flag = ObtenerNegocio(unidadActual, categoriaActual);
+            int flag = ObtenerProducto(unidadActual, categoriaActual);
             if (flag == -1) {
                 onBackPressed();
             }
@@ -185,7 +185,7 @@ public class ProductoAdd extends AppCompatActivity {
 
     }
 
-    private int ObtenerNegocio(String unit, String category) {
+    private int ObtenerProducto(String unit, String category) {
         nDataBase = FirebaseDatabase.getInstance().getReference(); //hace referencia a la raiz
         nDataBase.child("Usuaro").child("Adiminastrador").child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
@@ -202,8 +202,10 @@ public class ProductoAdd extends AppCompatActivity {
                     String descrip = descripcion.getText().toString();
                     String cant = cantidad.getText().toString();
                     if (!id.isEmpty() && !producto.isEmpty() && !pC.isEmpty() && !pV.isEmpty() && !cant.isEmpty()) {
-                        double pc = Double.parseDouble(pC);
-                        double pv = Double.parseDouble(pV);
+                        double pc = 1;
+                        pc = Double.parseDouble(pC);
+                        double pv = 0;
+                        pv = Double.parseDouble(pV);
                         if (pc < pv) {
                             Map<String, Object> productoMap = new HashMap<>();
                             productoMap.put("codigo", id);
@@ -229,7 +231,7 @@ public class ProductoAdd extends AppCompatActivity {
                                                     String nom = snapshot.child("nombrenegocio").getValue().toString();
                                                     Map<String, Object> productoMap = new HashMap<>();
                                                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-                                                    Query query = reference.child("Tienda").child(nom).child("Producto").orderByChild("id").equalTo(id);
+                                                    Query query = reference.child("Tienda").child(nom).child("Producto").orderByChild("codigo").equalTo(id);
                                                     query.addListenerForSingleValueEvent(new ValueEventListener() {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -279,10 +281,14 @@ public class ProductoAdd extends AppCompatActivity {
 
             }
         });
-        double pv = Double.parseDouble(precioV.getText().toString());
-        double pc = Double.parseDouble(precioC.getText().toString());
-        if (pc > pv) {
-            return 1;
+        String pC = precioC.getText().toString();
+        String pV = precioV.getText().toString();
+        if (!pC.isEmpty() && !pV.isEmpty() ){
+            double pv = Double.parseDouble(pV);
+            double pc = Double.parseDouble(pC);
+            if (pc > pv) {
+                return 1;
+            }
         }
         return -1;
     }
