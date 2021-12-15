@@ -1,42 +1,16 @@
 package com.example.tunegocio.detalles;
 
-import android.Manifest;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
-import android.content.ContentValues;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 
-import com.example.tunegocio.Models.Categoria;
-import com.example.tunegocio.Models.Unidad;
 import com.example.tunegocio.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -45,13 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class DetalleCliente extends AppCompatActivity {
@@ -66,11 +35,11 @@ public class DetalleCliente extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.producto_detalle);
+        setContentView(R.layout.cliente_detalle);
 
-        btnRegresar = findViewById(R.id.regresarPD);
-        btnDel = findViewById(R.id.btnEliminarPD);
-        btnEdit = findViewById(R.id.btnEditarPD);
+        btnRegresar = findViewById(R.id.btnRegresarC);
+        btnDel = findViewById(R.id.btnDelC);
+        btnEdit = findViewById(R.id.btnEditC);
 
 
         etAlias = findViewById(R.id.etAliasC);
@@ -176,7 +145,7 @@ public class DetalleCliente extends AppCompatActivity {
                         productoMap.put("direccion", direc);
                         productoMap.put("correo", mail);
                         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-                        Query query = reference.child("Tienda").child(nom).child("Cliente").orderByChild("correo").equalTo(mail);
+                        Query query = reference.child("Tienda").child(nom).child("Cliente").orderByChild("hash").equalTo(hash);
                         query.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {

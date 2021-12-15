@@ -104,7 +104,7 @@
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/categoria_item.xml" value="0.4" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/categoria_lista.xml" value="0.11980749746707194" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/cliente_add.xml" value="0.25" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/cliente_detalle.xml" value="0.2" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/cliente_detalle.xml" value="0.1" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/cliente_fragment.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/cliente_item.xml" value="0.25" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/fragment_employee_administrador.xml" value="0.25" />
@@ -112,7 +112,7 @@
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/main_fragment.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/nav_header.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/password.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_add.xml" value="0.4" />
+        <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_add.xml" value="0.24074074074074073" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_detalle.xml" value="0.264" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_detalle_edit.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/olgag/Documentos/8voSemestre/Moviles/TuNegocioApp/TuNegocio/app/src/main/res/layout/producto_fragment.xml" value="0.25" />

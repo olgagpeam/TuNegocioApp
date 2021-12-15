@@ -21,7 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tunegocio.Models.Cliente;
 import com.example.tunegocio.adapters.ClienteAdapter;
 import com.example.tunegocio.adds.ClienteAdd;
-import com.example.tunegocio.adds.ProductoAdd;
 import com.example.tunegocio.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;

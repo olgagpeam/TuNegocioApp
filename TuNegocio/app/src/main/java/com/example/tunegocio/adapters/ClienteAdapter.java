@@ -13,12 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import com.example.tunegocio.Models.Cliente;
-import com.example.tunegocio.detalles.DetalleProducto;
+import com.example.tunegocio.detalles.DetalleCliente;
 import com.example.tunegocio.R;
-import com.example.tunegocio.Models.Producto;
-import com.squareup.picasso.Picasso;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.MyHolder> {
 
@@ -64,7 +60,7 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.MyHolder
 
         //Para pasar los datos a Detalle
         holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(context, DetalleProducto.class);
+            Intent intent = new Intent(context, DetalleCliente.class);
             intent.putExtra("hash", hash);
             intent.putExtra("nombreCompleto", nombreCom);
             intent.putExtra("alias", alias);

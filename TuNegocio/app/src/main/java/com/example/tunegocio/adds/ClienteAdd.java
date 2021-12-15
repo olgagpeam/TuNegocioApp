@@ -67,7 +67,7 @@ public class ClienteAdd extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.producto_add);
+        setContentView(R.layout.cliente_add);
         etNombreComp = findViewById(R.id.etNombreC);
         etAlias = findViewById(R.id.etAliasC);
         etDireccion = findViewById(R.id.etDireccionC);
@@ -83,9 +83,10 @@ public class ClienteAdd extends AppCompatActivity {
         user = auth.getCurrentUser();
 
         btnagregar.setOnClickListener(view -> {
-            ObtenerNegocio();
-            onBackPressed();
+                ObtenerCliente();
+                onBackPressed();
         });
+
         btnregresar.setOnClickListener(view -> {
             onBackPressed();
         });
@@ -93,7 +94,7 @@ public class ClienteAdd extends AppCompatActivity {
     }
 
 
-    private void ObtenerNegocio() {
+    private void ObtenerCliente() {
         nDataBase = FirebaseDatabase.getInstance().getReference(); //hace referencia a la raiz
         nDataBase.child("Usuaro").child("Adiminastrador").child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
@@ -136,7 +137,7 @@ public class ClienteAdd extends AppCompatActivity {
                                                         @Override
                                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                                             for (DataSnapshot ds : snapshot.getChildren()) {
-                                                                hash = ds.getRef().getKey();
+                                                                String hash = ds.getRef().getKey();
                                                                 productoMap.put("hash", hash);
                                                                 ds.getRef().updateChildren(productoMap);
                                                             }

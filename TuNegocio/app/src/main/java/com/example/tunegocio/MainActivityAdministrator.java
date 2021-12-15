@@ -94,11 +94,13 @@ public class MainActivityAdministrator extends AppCompatActivity
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
               new ClientAdministrator()).commit();
         break;
-      case R.id.nav_informes:
-        title = R.string.menu_informes;
-        break;
-      case R.id.nav_proveedores:
-        break;
+
+     // case R.id.nav_informes:
+      //  title = R.string.menu_informes;
+        //break;
+
+      //case R.id.nav_proveedores:
+      //  break;
       case R.id.nav_empleados:
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment,
                 new EmployeeAdministrador()).commit();

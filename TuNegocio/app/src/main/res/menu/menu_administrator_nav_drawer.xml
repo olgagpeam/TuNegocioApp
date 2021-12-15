@@ -16,14 +16,18 @@
             android:id="@+id/nav_clientes"
             android:icon="@drawable/ic_menu_cliente"
             android:title="Clientes" />
+        <!--
         <item
             android:id="@+id/nav_informes"
             android:icon="@drawable/ic_menu_reporte"
             android:title="Informes" />
+            -->
+        <!--
         <item
             android:id="@+id/nav_proveedores"
             android:icon="@drawable/ic_menu_proveedor"
             android:title="Proveedores" />
+            -->
         <item
             android:id="@+id/nav_empleados"
             android:icon="@drawable/ic_menu_empleado"
